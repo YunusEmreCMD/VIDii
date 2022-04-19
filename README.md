@@ -16,7 +16,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 Yunus Emre Alkan
 
 #### Je startniveau:
-Zwartrood ![#402225](https://via.placeholder.com/15/402225/000000?text=+) `#402225`
+Zwart
 
 
 
