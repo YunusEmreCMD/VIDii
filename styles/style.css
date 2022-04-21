@@ -1,19 +1,190 @@
 /* CSS Document */
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-html, body {
-  height:100%;
-  margin:0;
+/* --- INGELADEN FONT --- */
+
+@font-face {
+  font-family: "gameboy-font";
+  src: url("//db.onlinewebfonts.com/t/3ada9815c06d2619d52d16a5601c96b2.eot");
+  src: url("//db.onlinewebfonts.com/t/3ada9815c06d2619d52d16a5601c96b2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/3ada9815c06d2619d52d16a5601c96b2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/3ada9815c06d2619d52d16a5601c96b2.woff") format("woff"), url("//db.onlinewebfonts.com/t/3ada9815c06d2619d52d16a5601c96b2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/3ada9815c06d2619d52d16a5601c96b2.svg#Early GameBoy") format("svg");
 }
 
-button:not([disabled]) {
-  cursor:pointer;
+@font-face {
+  font-family: "pokemon-font";
+  src: url("/fonts/pokemon/Pokemon_GB.ttf") format('ttf'),
+    url('/fonts/pokemon/Pokemon_GB.woff') format('woff');
 }
 
-/* jouw CSS vanaf hier */
 
-h1 {
-  color:crimson;
+/* --- VARIABELEN --- */
+
+:root {
+  --body-background-color: #3888F0;
+  --venster-background: #F8F0D8;
+
+  --gameboy-font: gameboy-font;
+  --pokemon-font: pokemon-font;
+}
+
+
+
+html,
+body {
+  height: 100%;
+  background-color: var(--body-background-color);
+
+  margin: 2em;
+  overflow: hidden;
+
+  /* font-family: var(--gameboy-font); */
+  font-family: var(--pokemon-font);
+  font-size: 12px;
+  text-shadow: 0.75px 0.75px 1.5px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  gap: 3em;
+
+  min-width: 900px;
+  max-width: 1400px;
+}
+
+
+/* --- VENSTER PROPERTIES - ALGEMEEN --- */
+
+article {
+  background-color: var(--venster-background);
+
+  padding: 2em;
+
+  border: 0.5em solid gray;
+  border-radius: 0.75em;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+/* --- VENSTER 1 --- */
+
+article:nth-child(1) {
+  width: 40%;
+}
+
+article section:nth-child(1) {
+  height: 40em;
+  /* width: 100%; */
+
+  padding: 0 3em;
+
+  background-image: url("/images/bg-texture.png");
+
+  border: 0.5em solid gray;
+  border-radius: 0.75em;
+
+  box-shadow: inset 15px 15px 0px #C8F8C0, inset -15px -15px 0px #78A068;
+  overflow: hidden;
+}
+
+
+/* --- ALLE EEVEE'S --- */
+
+article section:nth-child(1) ul {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4em;
+
+  margin: 0;
+  padding: 0;
+}
+
+article section:nth-child(1) ul li {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+article section:nth-child(1) ul li img {
+  height: 4em;
+}
+
+
+/* --- TEKST VENSTER --- */
+
+article section:nth-child(2) {
+  height: 10em;
+  /* width: 100%; */
+
+  margin-top: 2em;
+  padding: 2em;
+
+  font-size: 12px;
+
+  background-color: white;
+
+  border: 0.5em solid #78A068;
+  border-radius: 0.75em;
+
+  box-shadow: inset 0px 0px 0px 5px #C8F8C0;
+}
+
+article section:nth-child(2) p {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* --- VENSTER 2 --- */
+
+article:nth-child(2) {
+  width: 60%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+article:nth-child(2) img {
+  height: 10em;
+  margin: 0 auto;
+}
+
+article:nth-child(2) ul {
+  padding: 0.2em;
+  margin: 0;
+
+  width: 50%;
+
+  background-color: #D0C8B8;
+  border-radius: 0.5em;
+}
+
+article:nth-child(2) ul li {
+  list-style-type: none;
+
+  padding: 0.75em 0.5em;
+
+  border-radius: 0.3em;
+
+  text-transform: none;
+}
+
+article:nth-child(2) ul li:nth-child(odd) {
+  background-color: var(--venster-background);
+
+  text-transform: uppercase;
+}
+
+article:nth-child(2) p {
+  margin: 0;
+  padding: 0;
 }
