@@ -13,10 +13,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Jij
 
 ### Ontwerper:
-Sanne 't Hooft (vervangen door jouw naam)
+Yunus Emre Alkan
 
 #### Je startniveau:
-Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
+Zwart
 
 
 
@@ -33,10 +33,9 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Het meer en efficienter gebruiken van custom-properties
+  - Elementen toevoegen/verwijderen middels Javascript
+  - Ervaring en kennis opdoen over CSS Animaties
  
 </details>
 
@@ -46,26 +45,44 @@ Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
 ## Voortgang/Feedback 1
 
 <details>
+  
+  In de eerste les ben ik eerst inspiratie gaan opdoen, ik ben daarom ook een moodboard gaan maken. Een moodboard met plaatjes van verschillende interfaces en informatie over de Eeevee's. Ook heb ik een video van de evolutie van Eevee gevonden, als ik tijd heb, wil ik deze ook graag maken. De 2e les ben ik mijn 3 concepten gaan laten zien aan mijn medestudenten, ik ben zelf doorgegaan met concept 1, omdat ik die zelf het leukst vond om te maken. Ik ben een wat betere schets gaan maken en heb hier feedback op gevraagd.
+  
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De knoppen indeling wijzigen aan de bovenkant van het scherm.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Nog mee bezig...
 
-
-
+  
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De tas met de items, moet meer opvallen.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik ben de tas meer opvallend gaan maken
 
-
-
+  
   ### Bevinding 3:
-  ...
+  De pointer aanpassen
+  
+  #### oplossing:
+  Nog mee bezig...
+  
+  
+  ### Bevinding 4:
+  Nadenken over de positie over de pop-up van de item-bag
+  
+  #### oplossing:
+  Ik ben de item-bag op een andere plek gaan neerzetten, waardoor de pop-up goed bij het geheel past.
+  
+  
+  ### Bevinding 5:
+  Er zijn nog geen specifieke easter-eggs.
+  
+  #### oplossing:
+  Nog mee bezig...
 
 </details>
 
