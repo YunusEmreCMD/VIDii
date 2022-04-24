@@ -70,7 +70,7 @@ body {
 
   user-select: none;
 
-  cursor: url("/images/cursors/Alternate.cur"), auto;
+  cursor: url("../images/cursors/Alternate.cur"), auto;
 }
 
 html.darkmode,
@@ -132,7 +132,7 @@ header ul li:nth-child(1) label span {
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 34px;
-  cursor: url("/images/cursors/Link.cur"), auto;
+  cursor: url("../cursors/Link.cur"), auto;
 }
 
 header ul li:nth-child(1) label span:before {
@@ -204,7 +204,7 @@ article:nth-child(1) section:nth-child(1) {
 
   padding: 0 3em;
 
-  background-image: url("/images/achtergronden/gras.png");
+  background-image: url("../images/achtergronden/gras.png");
 
   border: 0.5em solid gray;
   border-radius: 0.75em;
@@ -250,6 +250,8 @@ article:nth-child(1) section:nth-child(2) {
 
   margin-top: 2em;
   padding: 1.5em 2em;
+
+  height: 10em;
 
   font-size: 12px;
 
@@ -540,7 +542,7 @@ article:nth-child(2) section:nth-child(3) {
   right: 0;
 
   margin: 2em 1em;
-  background-image: url("/images/items/new-bag.png");
+  background-image: url("../images/items/new-bag.png");
   background-size: cover;
 
   height: 75px;
@@ -548,11 +550,11 @@ article:nth-child(2) section:nth-child(3) {
 
   z-index: 1;
 
-  cursor: url("/images/cursors/Link.cur"), auto;
+  cursor: url("../images/cursors/Link.cur"), auto;
 }
 
 article:nth-child(2) section:nth-child(3).openklappen {
-  background-image: url("/images/items/new-bag-open.png");
+  background-image: url("../images/items/new-bag-open.png");
 }
 
 
@@ -606,7 +608,7 @@ article:nth-child(2) section ul li:last-child {
 /* https://css-tricks.com/useful-nth-child-recipies/ */
 
 article:nth-child(2) section ul li:not(:nth-child(4n-7)) {
-  cursor: url("/images/cursors/Link.cur"), auto;
+  cursor: url("../images/cursors/Link.cur"), auto;
 }
 
 article:nth-child(2) section ul li:not(:nth-child(4n-7)):focus {
