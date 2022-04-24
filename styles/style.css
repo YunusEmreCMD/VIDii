@@ -17,8 +17,8 @@
 
 @font-face {
   font-family: "pokemon-font";
-  src: url("./fonts/pokemon/Pokemon_GB.ttf") format('ttf'),
-    url('./fonts/pokemon/Pokemon_GB.woff') format('woff');
+  src: url("/fonts/pokemon/Pokemon_GB.ttf") format('ttf'),
+    url('/fonts/pokemon/Pokemon_GB.woff') format('woff');
 }
 
 
