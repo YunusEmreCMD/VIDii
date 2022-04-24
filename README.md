@@ -13,10 +13,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Jij
 
 ### Ontwerper:
-Yunus Emre Alkan
+Sanne 't Hooft (vervangen door jouw naam)
 
 #### Je startniveau:
-Zwart
+Mijn startniveau is: hier je startniveau (kies uit zwart, rood óf blauw)
 
 
 
@@ -33,9 +33,10 @@ Zwart
 
   ### Je ambitie: 
   Aan deze technieken/punten wil ik werken:
-  - Het meer en efficienter gebruiken van custom-properties
-  - Elementen toevoegen/verwijderen middels Javascript
-  - Ervaring en kennis opdoen over CSS Animaties
+  - punt 1
+  - punt 2
+  - nog een punt
+  - ...
  
 </details>
 
@@ -44,45 +45,27 @@ Zwart
 
 ## Voortgang/Feedback 1
 
-  In de eerste les ben ik eerst inspiratie gaan opdoen, ik ben daarom ook een moodboard gaan maken. Een moodboard met plaatjes van verschillende interfaces en informatie over de Eeevee's. Ook heb ik een video van de evolutie van Eevee gevonden, als ik tijd heb, wil ik deze ook graag maken. De 2e les ben ik mijn 3 concepten gaan laten zien aan mijn medestudenten, ik ben zelf doorgegaan met concept 1, omdat ik die zelf het leukst vond om te maken. Ik ben een wat betere schets gaan maken en heb hier feedback op gevraagd.
-
 <details>
-  
-  <summary>Feedback van Jorinda</summary>
+  <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
 
   ### Bevinding 1:
-  De knoppen indeling wijzigen aan de bovenkant van het scherm.
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
   #### oplossing:
-  Nog mee bezig...
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
-  
+
+
   ### Bevinding 2:
-  De tas met de items, moet meer opvallen.
+  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
   #### oplossing:
-  Ik ben de tas meer opvallend gaan maken
+  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
 
-  
+
+
   ### Bevinding 3:
-  De pointer aanpassen
-  
-  #### oplossing:
-  Nog mee bezig...
-  
-  
-  ### Bevinding 4:
-  Nadenken over de positie over de pop-up van de item-bag
-  
-  #### oplossing:
-  Ik ben de item-bag op een andere plek gaan neerzetten, waardoor de pop-up goed bij het geheel past.
-  
-  
-  ### Bevinding 5:
-  Er zijn nog geen specifieke easter-eggs.
-  
-  #### oplossing:
-  Nog mee bezig...
+  ...
 
 </details>
 

@@ -5,7 +5,9 @@
   box-sizing: border-box;
 }
 
-/* --- INGELADEN FONT --- */
+/* -------------------------- 
+ ----- Ingelade Fonts ------ 
+ ----------------------------  */
 
 @font-face {
   font-family: "gameboy-font";
@@ -20,14 +22,29 @@
 }
 
 
-/* --- VARIABELEN --- */
+/* -------------------------- 
+ --------- Variabele -------- 
+ ----------------------------  */
 
 :root {
-  --body-background-color: #3888F0;
-  --venster-background: #F8F0D8;
+  --body-bg: #3888F0;
+  --venster-bg: #F8F0D8;
+
+  --min-width-main: 900px;
+  --max-width-main: 1500px;
 
   --gameboy-font: gameboy-font;
   --pokemon-font: pokemon-font;
+
+  --tekst-venster-line-height: 2em;
+  --tekst-venster-bg: #ffffff;
+
+  --venster2-info-lijst-bg: #D0C8B8;
+
+  --item-lijst-bg: #F0C870;
+  --item-lijst-focus: blue;
+  --item-lijst-titel-bg: #f4ae17;
+  --item-lijst-accenten: #ECE6B0;
 }
 
 
@@ -35,7 +52,7 @@
 html,
 body {
   height: 100%;
-  background-color: var(--body-background-color);
+  background-color: var(--body-bg);
 
   margin: 2em;
   overflow: hidden;
@@ -48,21 +65,121 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 2em;
+
+  user-select: none;
+
+  cursor: url("/images/cursors/Alternate.cur"), auto;
 }
+
+html.darkmode,
+body.darkmode {
+  background-color: black;
+}
+
+
+/* -------------------------- 
+ ----------- Header --------- 
+ ----------------------------  */
+
+header {
+  width: 100%;
+
+  background-color: var(--venster-bg);
+
+  padding: 1em;
+
+  border: 0.5em solid gray;
+  border-radius: 0.75em;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+header ul {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  /* flex-direction: row-reverse; */
+  gap: 5em;
+}
+
+header ul li {
+  list-style-type: none;
+}
+
+header ul li:nth-child(1) label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+header ul li:nth-child(1) label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+header ul li:nth-child(1) label span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+  cursor: url("/images/cursors/Link.cur"), auto;
+}
+
+header ul li:nth-child(1) label span:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+header ul li:nth-child(1) label input:checked+span {
+  background-color: #2196F3;
+}
+
+header ul li:nth-child(1) label input:focus+span {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+header ul li:nth-child(1) label input:checked+span:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+/* -------------------------- 
+ ----------- Main -----------
+ ----------------------------  */
 
 main {
   display: flex;
   gap: 3em;
 
-  min-width: 900px;
-  max-width: 1400px;
+  min-width: var(--min-width-main);
+  max-width: var(--max-width-main);
 }
 
 
 /* --- VENSTER PROPERTIES - ALGEMEEN --- */
 
 article {
-  background-color: var(--venster-background);
+  background-color: var(--venster-bg);
 
   padding: 2em;
 
@@ -70,6 +187,8 @@ article {
   border-radius: 0.75em;
 
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+  position: relative;
 }
 
 
@@ -79,13 +198,13 @@ article:nth-child(1) {
   width: 40%;
 }
 
-article section:nth-child(1) {
+article:nth-child(1) section:nth-child(1) {
   height: 40em;
   /* width: 100%; */
 
   padding: 0 3em;
 
-  background-image: url("/images/bg-texture.png");
+  background-image: url("/images/achtergronden/gras.png");
 
   border: 0.5em solid gray;
   border-radius: 0.75em;
@@ -97,65 +216,178 @@ article section:nth-child(1) {
 
 /* --- ALLE EEVEE'S --- */
 
-article section:nth-child(1) ul {
+article:nth-child(1) section:nth-child(1) ul {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 4em;
 
   margin: 0;
-  padding: 0;
+  padding: 1em 0;
 }
 
-article section:nth-child(1) ul li {
+article:nth-child(1) section:nth-child(1) ul li {
   list-style: none;
 
   margin: 0;
   padding: 0;
 }
 
-article section:nth-child(1) ul li img {
+article:nth-child(1) section:nth-child(1) ul li img {
   height: 4em;
 }
 
+article:nth-child(1) section:nth-child(1) ul li img:hover {
+  transform: translateY(-1em);
+}
 
-/* --- TEKST VENSTER --- */
 
-article section:nth-child(2) {
-  height: 10em;
-  /* width: 100%; */
+/* -------------------------- 
+ ------ Tekst Venster ------- 
+ ----------------------------  */
+
+article:nth-child(1) section:nth-child(2) {
 
   margin-top: 2em;
-  padding: 2em;
+  padding: 1.5em 2em;
 
   font-size: 12px;
 
-  background-color: white;
+  background-color: var(--tekst-venster-bg);
 
   border: 0.5em solid #78A068;
   border-radius: 0.75em;
 
   box-shadow: inset 0px 0px 0px 5px #C8F8C0;
+
+  overflow-y: scroll;
 }
 
-article section:nth-child(2) p {
+article:nth-child(1) section:nth-child(2) p {
   padding: 0;
   margin: 0;
+
+  line-height: var(--tekst-venster-line-height);
 }
 
 
-/* --- VENSTER 2 --- */
+
+/* -------------------------- 
+ -------- TypeWriter -------- 
+ ----------------------------  */
+
+/* https://codepen.io/alvaromontoro/pen/LYLZOrE */
+
+article:nth-child(1) section:nth-child(2) p.typewriter {
+  --bgColor: white;
+  --lines: 500;
+  --lineHeight: var(--tekst-venster-line-height);
+  --timePerLine: 1.5s;
+  /* --widthCh: 22; */
+  --width: calc(var(--widthCh) * 1ch);
+  /* do not touch the time property!!! */
+  --time: calc(var(--lines) * var(--timePerLine));
+  animation: grow var(--time) steps(var(--lines));
+  animation-fill-mode: forwards;
+  background: var(--bgColor);
+  line-height: var(--lineHeight);
+  max-height: var(--lineHeight);
+  overflow: hidden;
+  position: relative;
+  width: var(--width);
+  /* word-break: break-all; */
+}
+
+article:nth-child(1) section:nth-child(2) p.typewriter::before {
+  content: "";
+  animation:
+    type var(--timePerLine) linear infinite,
+    carriageReturn var(--time) steps(var(--lines)) var(--lines),
+    caret 0.5s steps(2) infinite;
+  background: var(--bgColor);
+  /* border-left: 2px solid; */
+  bottom: 0;
+  height: 2rem;
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+
+
+@keyframes grow {
+  0% {
+    max-height: var(--lineHeight);
+  }
+
+  100% {
+    max-height: calc(var(--lineHeight) * var(--lines));
+  }
+}
+
+@keyframes carriageReturn {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: calc(var(--lineHeight) * var(--lines));
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+
+
+article:nth-child(1) section:nth-child(2) p::after {
+
+  /* https://codepen.io/carstenmeyer/pen/MjYZBr */
+
+  content: "";
+
+  border-top: 0.85em solid transparent;
+  border-bottom: 0.85em solid transparent;
+  border-left: 0.85em solid #E70912;
+
+  transform: rotate(90deg);
+
+  margin-left: 0.5em;
+
+  display: inline-block;
+  vertical-align: middle;
+
+  width: 0;
+  height: 0;
+}
+
+article:nth-child(1) section:nth-child(2) p.kort:after {
+  content: none;
+}
+
+
+
+/* -------------------------- 
+ -------- Venster 2 -------- 
+ ----------------------------  */
 
 article:nth-child(2) {
   width: 60%;
+
+  padding-right: 0;
 
   display: flex;
   justify-content: space-between;
 }
 
-article:nth-child(2) img {
-  height: 10em;
-  margin: 0 auto;
+article:nth-child(2) section:nth-child(2) img {
+  height: 15em;
 }
 
 article:nth-child(2) ul {
@@ -164,7 +396,7 @@ article:nth-child(2) ul {
 
   width: 50%;
 
-  background-color: #D0C8B8;
+  background-color: var(--venster2-info-lijst-bg);
   border-radius: 0.5em;
 }
 
@@ -178,8 +410,8 @@ article:nth-child(2) ul li {
   text-transform: none;
 }
 
-article:nth-child(2) ul li:nth-child(odd) {
-  background-color: var(--venster-background);
+article:nth-child(2)>ul li:nth-child(odd) {
+  background-color: var(--venster-bg);
 
   text-transform: uppercase;
 }
@@ -187,4 +419,278 @@ article:nth-child(2) ul li:nth-child(odd) {
 article:nth-child(2) p {
   margin: 0;
   padding: 0;
+}
+
+
+/* -------------------------- 
+ -------- Evolueren -------- 
+ ----------------------------  */
+
+article:nth-child(2) section {
+  /* margin: 0 2em; */
+  padding: 0;
+  margin: 0 auto;
+}
+
+article:nth-child(2) section:nth-child(2)>section {
+  /* margin: 0 auto; */
+  position: relative;
+  width: 100%;
+  transform-origin: center center;
+}
+
+
+/* Normale Eevee - Evolueren met steen */
+
+article:nth-child(2) section:nth-child(2) section>img:nth-child(1).evolve {
+  animation-name: veranderNaarWit, evolutie, evolutie, evolutie, geevolueerd;
+  animation-duration: 1s, 0.5s, 0.2s, 0.12s, 0s;
+  animation-iteration-count: 1, 4, 12, 24, 1;
+  animation-fill-mode: forwards, none, none, none, forwards;
+  animation-delay: 0s, 1s, 3s, 5.2s, 7.6s;
+  animation-timing-function: linear;
+  animation-direction: normal, alternate, alternate, alternate, alternate;
+}
+
+
+/* Evaluatie Eevee */
+
+article:nth-child(2) section:nth-child(2) section>img:nth-child(2) {
+  /* background-color: red; */
+
+  position: absolute;
+  right: 0;
+  transform: scale(0.1);
+
+  z-index: 1;
+  opacity: 0;
+
+  filter: brightness(0) invert(1);
+}
+
+
+/* Evaluatie Eevee - Evolueren met steen */
+
+article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
+  animation-name: display, evolutie, evolutie, evolutie, geevolueerd;
+  animation-duration: 0.1s, 0.5s, 0.2s, 0.12s, 0.35s;
+  animation-iteration-count: 1, 4, 12, 24, 1;
+  animation-delay: 1s, 1s, 3s, 5.2s, 7.6s;
+  animation-fill-mode: forwards, none, none, none, forwards;
+  animation-timing-function: linear;
+  animation-direction: alternate-reverse;
+}
+
+
+/* Evolueren Animatie */
+
+@keyframes veranderNaarWit {
+  0% {
+    filter: brightness(1) invert(0);
+  }
+
+  100% {
+    filter: brightness(0) invert(1);
+  }
+}
+
+@keyframes display {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes evolutie {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+@keyframes geevolueerd {
+  0% {
+    transform: scale(1);
+    filter: brightness(1) invert(0);
+  }
+
+  100% {
+    transform: scale(0.1);
+    filter: brightness(0) invert(1);
+  }
+}
+
+
+
+
+/* -------------------------- 
+ -------- Item Bag ---------- 
+ ----------------------------  */
+
+article:nth-child(2) section:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin: 2em 1em;
+  background-image: url("/images/items/new-bag.png");
+  background-size: cover;
+
+  height: 75px;
+  width: 75px;
+
+  z-index: 1;
+
+  cursor: url("/images/cursors/Link.cur"), auto;
+}
+
+article:nth-child(2) section:nth-child(3).openklappen {
+  background-image: url("/images/items/new-bag-open.png");
+}
+
+
+/* -------------------------- 
+ ---------- Items -----------
+ ----------------------------  */
+
+article:nth-child(2) section ul {
+  background-color: var(--item-lijst-bg);
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  margin: 2em;
+  padding: 1em;
+
+  width: 40%;
+  height: 30em;
+
+  overflow-y: scroll;
+
+  transform: scale(0.15);
+  transform-origin: right bottom;
+
+  transition: 0.5s;
+  opacity: 0;
+}
+
+article:nth-child(2) section ul.openklappen {
+  transform: scale(1);
+  opacity: 1;
+}
+
+article:nth-child(2) section ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  border-radius: 0;
+
+  margin-bottom: 0.5em;
+
+  position: relative;
+}
+
+article:nth-child(2) section ul li:last-child {
+  margin-bottom: 6em;
+}
+
+/* https://css-tricks.com/useful-nth-child-recipies/ */
+
+article:nth-child(2) section ul li:not(:nth-child(4n-7)) {
+  cursor: url("/images/cursors/Link.cur"), auto;
+}
+
+article:nth-child(2) section ul li:not(:nth-child(4n-7)):focus {
+  /* background-color: #ECE6B0; */
+  outline: none;
+}
+
+article:nth-child(2) section ul li:focus p {
+  color: var(--item-lijst-focus)
+}
+
+article:nth-child(2) section ul li:focus p:before {
+
+  /* https://codepen.io/carstenmeyer/pen/MjYZBr */
+
+  content: "";
+
+  border-top: 0.5em solid transparent;
+  border-bottom: 0.5em solid transparent;
+  border-left: 0.5em solid #737373;
+
+  padding-right: 0.5em;
+
+  display: inline-block;
+  vertical-align: bottom;
+
+  width: 0;
+  height: 0;
+}
+
+article:nth-child(2) section ul li:not(:nth-child(4n-7)):after {
+  content: "";
+  width: calc(100% - 1em);
+  border-bottom: 3px dashed var(--item-lijst-accenten);
+
+  position: absolute;
+  bottom: 0;
+}
+
+article:nth-child(2) section ul li:nth-child(4n-7) {
+  margin-bottom: 0;
+  border-radius: 0.5em 0.5em 0 0;
+  background-color: var(--item-lijst-titel-bg);
+}
+
+article:nth-child(2) section ul li:nth-child(4n-7):not(:first-of-type) {
+  margin-top: 1.5em;
+}
+
+article:nth-child(2) section ul li h5 {
+  margin: 0;
+  padding: 0;
+
+  text-transform: uppercase;
+
+  color: var(--item-lijst-accenten);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+article:nth-child(2) section:nth-child(2) ul li img {
+  height: 1.75em;
+}
+
+article:nth-child(2) section ul li p {
+  text-transform: uppercase;
+}
+
+
+/* -------------------------- 
+ ---------- Footer -----------
+ ----------------------------  */
+
+footer {
+  font-size: 10px;
+  color: var(--item-lijst-accenten);
+}
+
+
+
+
+/* --- VERBERGEN SCROLLBAR --- */
+
+article:nth-child(2) section ul::-webkit-scrollbar,
+article:nth-child(1) section:nth-child(2)::-webkit-scrollbar {
+  display: none;
 }
