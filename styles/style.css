@@ -794,7 +794,7 @@ article:nth-child(2) section ul li:nth-child(4n-7):not(:first-of-type) {
 
 article:nth-child(2) section:nth-child(2) ul li button img {
   height: 2em;
-  cursor: url("../images/cursors/Move.cur"), auto;
+  /* cursor: url("../images/cursors/Move.cur"), auto; */
   z-index: 999;
 }
 
