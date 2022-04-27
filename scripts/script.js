@@ -450,7 +450,7 @@ var testImg = document.querySelector("body .testimg");
 function testImgFuncVuur() {
   console.log("fireestonee");
 
-  testImg.src = "../images/items/firestone.png";
+  testImg.src = "images/items/firestone.png";
   // testImg.classList.add("steenStyling");
 
   steen.classList.remove("wegsteen");
@@ -460,7 +460,7 @@ fireStone.addEventListener("dblclick", testImgFuncVuur);
 
 function testImgFuncWater() {
   console.log("waterrstonee");
-  testImg.src = "../images/items/waterstone.png";
+  testImg.src = "images/items/waterstone.png";
 
   steen.classList.remove("wegsteen");
 }
@@ -469,7 +469,7 @@ waterStone.addEventListener("dblclick", testImgFuncWater);
 
 function testImgFuncThunder() {
   console.log("thunderrstonee");
-  testImg.src = "../images/items/thunderstone.png";
+  testImg.src = "images/items/thunderstone.png";
 
   steen.classList.remove("wegsteen");
 }
@@ -482,17 +482,17 @@ function checkImg() {
 
   const source = testImg.getAttribute('src');
 
-  if(source == "../images/items/firestone.png") {
+  if(source == "images/items/firestone.png") {
     evolveFireStone();
     eevee2.classList.add("geevolueerd-klein");
     console.log("fire evolve");
   }
-  if(source == "../images/items/waterstone.png") {
+  if(source == "images/items/waterstone.png") {
     evolveWaterStone();
     eevee3.classList.add("geevolueerd-klein");
     console.log("water evolve");
   }
-  if(source == "../images/items/thunderstone.png") {
+  if(source == "images/items/thunderstone.png") {
     evolveThunderStone();
     eevee4.classList.add("geevolueerd-klein");
     console.log("thunder evolve");
