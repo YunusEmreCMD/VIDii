@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: "pokemon-font";
-  src: url("../fonts/pokemon/Pokemon_GB.ttf") format('ttf'),
+  src: url("../fonts/pokemon/Pokemon_GB.ttf") format('truetype'),
     url('../fonts/pokemon/Pokemon_GB.woff') format('woff');
 }
 
@@ -31,7 +31,7 @@
   --venster-bg: #F8F0D8;
 
   --min-width-main: 900px;
-  --max-width-main: 1500px;
+  --max-width-main: 1400px;
 
   --gameboy-font: gameboy-font;
   --pokemon-font: pokemon-font;
@@ -45,22 +45,36 @@
   --item-lijst-focus: blue;
   --item-lijst-titel-bg: #f4ae17;
   --item-lijst-accenten: #ECE6B0;
+
+
+  /* VERSCHILLENDE BOXEN */
+
+  /* Normale gebied */
+  --normale-gebied-licht: #F8CE9D;
+  --normale-gebied-donker: #9D7443;
+
+  /* gras gebied */
+  --gras-gebied-licht: #C8F8C0;
+  --gras-gebied-donker: #78A068;
+
+  /* Ijs gebied */
+  --ijs-gebied-licht: #ececec;
+  --ijs-gebied-donker: #cfcfcf;
 }
 
 
 
 html,
 body {
-  height: 100%;
+  /* height: 100%; */
   background-color: var(--body-bg);
 
   margin: 2em;
-  overflow: hidden;
+  /* overflow: hidden; */
 
   /* font-family: var(--gameboy-font); */
   font-family: var(--pokemon-font);
   font-size: 12px;
-  text-shadow: 0.75px 0.75px 1.5px rgba(0, 0, 0, 0.5);
 
   display: flex;
   justify-content: center;
@@ -73,9 +87,30 @@ body {
   cursor: url("../images/cursors/Alternate.cur"), auto;
 }
 
-html.darkmode,
+/* img {
+  user-drag: none;
+  -webkit-user-drag: none
+} */
+
+body.slepen {
+  cursor: url("../images/cursors/Move.cur"), auto;
+  /* background-color: red; */
+}
+
+/* html.darkmode,
 body.darkmode {
   background-color: black;
+} */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+  text-shadow: 0.75px 0.75px 1.5px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -88,7 +123,7 @@ header {
 
   background-color: var(--venster-bg);
 
-  padding: 1em;
+  padding: 2em;
 
   border: 0.5em solid gray;
   border-radius: 0.75em;
@@ -101,6 +136,7 @@ header ul {
   padding: 0;
 
   display: flex;
+  align-items: center;
   /* flex-direction: row-reverse; */
   gap: 5em;
 }
@@ -109,58 +145,25 @@ header ul li {
   list-style-type: none;
 }
 
-header ul li:nth-child(1) label {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+header ul li button:focus {
+  font-weight: 600;
 }
 
-header ul li:nth-child(1) label input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+header ul li:nth-child(1) {
+  display: none;
 }
 
-header ul li:nth-child(1) label span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 34px;
-  cursor: url("../cursors/Link.cur"), auto;
+
+/* Radio button active */
+
+header ul li button input[type='radio'] {
+  display: none;
 }
 
-header ul li:nth-child(1) label span:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-  border-radius: 50%;
+header ul li button input:checked+label {
+  font-weight: 600;
 }
 
-header ul li:nth-child(1) label input:checked+span {
-  background-color: #2196F3;
-}
-
-header ul li:nth-child(1) label input:focus+span {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-header ul li:nth-child(1) label input:checked+span:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
 
 
 /* -------------------------- 
@@ -192,6 +195,29 @@ article {
 }
 
 
+/* --- BUTTONS --- */
+
+button,
+input,
+label {
+  padding: 0;
+  margin: 0;
+
+  background: none;
+  border: none;
+
+  cursor: url("../images/cursors/Link.cur"), auto;
+  font-family: var(--pokemon-font);
+
+  font-size: 12px;
+}
+
+button:hover,
+button:focus {
+  outline: none;
+}
+
+
 /* --- VENSTER 1 --- */
 
 article:nth-child(1) {
@@ -204,12 +230,12 @@ article:nth-child(1) section:nth-child(1) {
 
   padding: 0 3em;
 
-  background-image: url("../images/achtergronden/gras.png");
+  background-image: url("../images/achtergronden/aarde2.png");
 
   border: 0.5em solid gray;
   border-radius: 0.75em;
 
-  box-shadow: inset 15px 15px 0px #C8F8C0, inset -15px -15px 0px #78A068;
+  box-shadow: inset 15px 15px 0px var(--normale-gebied-licht), inset -15px -15px 0px var(--normale-gebied-donker);
   overflow: hidden;
 }
 
@@ -233,14 +259,19 @@ article:nth-child(1) section:nth-child(1) ul li {
   padding: 0;
 }
 
-article:nth-child(1) section:nth-child(1) ul li img {
-  height: 4em;
+article:nth-child(1) section:nth-child(1) ul li button {
+  margin: 0;
+  padding: 0;
 }
 
-article:nth-child(1) section:nth-child(1) ul li img:hover {
+article:nth-child(1) section:nth-child(1) ul li button:hover,
+article:nth-child(1) section:nth-child(1) ul li button:focus {
   transform: translateY(-1em);
 }
 
+article:nth-child(1) section:nth-child(1) ul li button img {
+  height: 4em;
+}
 
 /* -------------------------- 
  ------ Tekst Venster ------- 
@@ -257,20 +288,66 @@ article:nth-child(1) section:nth-child(2) {
 
   background-color: var(--tekst-venster-bg);
 
-  border: 0.5em solid #78A068;
+  border: 0.5em solid var(--normale-gebied-donker);
   border-radius: 0.75em;
 
-  box-shadow: inset 0px 0px 0px 5px #C8F8C0;
+  box-shadow: inset 0px 0px 0px 5px var(--normale-gebied-licht);
 
   overflow-y: scroll;
 }
 
-article:nth-child(1) section:nth-child(2) p {
+
+
+/* Gras omgeving properties */
+
+article:nth-child(1) section:nth-child(1).gras-omgeving {
+  box-shadow: inset 15px 15px 0px var(--gras-gebied-licht), inset -15px -15px 0px var(--gras-gebied-donker);
+}
+
+article:nth-child(1) section:nth-child(2).gras-omgeving {
+  border: 0.5em solid var(--gras-gebied-donker);
+  box-shadow: inset 0px 0px 0px 5px var(--gras-gebied-licht);
+}
+
+article:nth-child(1) section:nth-child(2).gras-omgeving {
+  box-shadow: inset 0px 0px 0px 5px var(--gras-gebied-licht);
+}
+
+
+/* Ijs omgeving properties */
+
+article:nth-child(1) section:nth-child(1).ijs-omgeving {
+  box-shadow: inset 15px 15px 0px var(--ijs-gebied-licht), inset -15px -15px 0px var(--ijs-gebied-donker);
+}
+
+article:nth-child(1) section:nth-child(2).ijs-omgeving {
+  border: 0.5em solid var(--ijs-gebied-donker);
+  box-shadow: inset 0px 0px 0px 5px var(--ijs-gebied-licht);
+}
+
+article:nth-child(1) section:nth-child(2).ijs-omgeving {
+  box-shadow: inset 0px 0px 0px 5px var(--ijs-gebied-licht);
+}
+
+
+
+article:nth-child(1) section:nth-child(2) button p {
   padding: 0;
   margin: 0;
 
+  font-size: 12px;
+  text-align: left;
+
+  /* color: darkgray; */
+
   line-height: var(--tekst-venster-line-height);
+  text-shadow: 0.75px 0.75px 1.5px rgba(0, 0, 0, 0.5);
 }
+
+article:nth-child(1) section:nth-child(2) button:focus p {
+  /* color: black; */
+}
+
 
 
 
@@ -280,7 +357,7 @@ article:nth-child(1) section:nth-child(2) p {
 
 /* https://codepen.io/alvaromontoro/pen/LYLZOrE */
 
-article:nth-child(1) section:nth-child(2) p.typewriter {
+article:nth-child(1) section:nth-child(2) button p.typewriter {
   --bgColor: white;
   --lines: 500;
   --lineHeight: var(--tekst-venster-line-height);
@@ -300,7 +377,7 @@ article:nth-child(1) section:nth-child(2) p.typewriter {
   /* word-break: break-all; */
 }
 
-article:nth-child(1) section:nth-child(2) p.typewriter::before {
+article:nth-child(1) section:nth-child(2) button p.typewriter::before {
   content: "";
   animation:
     type var(--timePerLine) linear infinite,
@@ -348,11 +425,11 @@ article:nth-child(1) section:nth-child(2) p.typewriter::before {
 
 
 
-article:nth-child(1) section:nth-child(2) p::after {
+article:nth-child(1) section:nth-child(2) button p::after {
 
   /* https://codepen.io/carstenmeyer/pen/MjYZBr */
 
-  content: "";
+  /* content: "";
 
   border-top: 0.85em solid transparent;
   border-bottom: 0.85em solid transparent;
@@ -366,10 +443,10 @@ article:nth-child(1) section:nth-child(2) p::after {
   vertical-align: middle;
 
   width: 0;
-  height: 0;
+  height: 0; */
 }
 
-article:nth-child(1) section:nth-child(2) p.kort:after {
+article:nth-child(1) section:nth-child(2) button p.kort:after {
   content: none;
 }
 
@@ -388,9 +465,18 @@ article:nth-child(2) {
   justify-content: space-between;
 }
 
-article:nth-child(2) section:nth-child(2) img {
+article:nth-child(2) section:nth-child(2) section img {
   height: 15em;
+  position: relative;
+  /* background-color: red; */
 }
+
+/* article:nth-child(2) section:nth-child(2) div {
+  height: 15em;
+  width: 15em;
+  background-image: url("../images/pokemons/eevee2.png");
+  background-size: cover;
+} */
 
 article:nth-child(2) ul {
   padding: 0.2em;
@@ -405,7 +491,8 @@ article:nth-child(2) ul {
 article:nth-child(2) ul li {
   list-style-type: none;
 
-  padding: 0.75em 0.5em;
+  padding: 0.75em 0 1.5em 0.75em;
+  /* padding: 0.75em 0.5em; */
 
   border-radius: 0.3em;
 
@@ -414,6 +501,8 @@ article:nth-child(2) ul li {
 
 article:nth-child(2)>ul li:nth-child(odd) {
   background-color: var(--venster-bg);
+
+  padding: 0.75em 0 0.75em 0.75em;
 
   text-transform: uppercase;
 }
@@ -536,7 +625,7 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
  -------- Item Bag ---------- 
  ----------------------------  */
 
-article:nth-child(2) section:nth-child(3) {
+article:nth-child(2)>button {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -553,8 +642,17 @@ article:nth-child(2) section:nth-child(3) {
   cursor: url("../images/cursors/Link.cur"), auto;
 }
 
-article:nth-child(2) section:nth-child(3).openklappen {
+article:nth-child(2)>button.openklappen {
   background-image: url("../images/items/new-bag-open.png");
+
+  height: 75px;
+  width: 75px;
+}
+
+article:nth-child(2)>button:focus {
+  /* outline: auto; */
+
+  /* background-image: url("../images/items/new-bag-open.png"); */
 }
 
 
@@ -584,21 +682,56 @@ article:nth-child(2) section ul {
   opacity: 0;
 }
 
-article:nth-child(2) section ul.openklappen {
+article:nth-child(2) section ul.openklappen,
+article:nth-child(2) section ul:focus-within {
   transform: scale(1);
   opacity: 1;
 }
 
 article:nth-child(2) section ul li {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
+  position: relative;
 
   border-radius: 0;
 
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
+  /* background-color: red; */
+}
 
-  position: relative;
+
+article:nth-child(2) section ul li h5 {
+  margin: 0;
+  padding: 0;
+
+  text-transform: uppercase;
+
+  color: var(--item-lijst-accenten);
+  font-size: 12px;
+  font-weight: bold;
+}
+
+article:nth-child(2) section ul li:nth-child(6) button {
+  /* background-color: red; */
+}
+
+article:nth-child(2) section ul li button {
+  margin: 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  align-items: end;
+
+  width: 100%;
+}
+
+article:nth-child(2) section ul li button h6 {
+  margin: 0;
+  padding: 0;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: left;
 }
 
 article:nth-child(2) section ul li:last-child {
@@ -607,20 +740,15 @@ article:nth-child(2) section ul li:last-child {
 
 /* https://css-tricks.com/useful-nth-child-recipies/ */
 
-article:nth-child(2) section ul li:not(:nth-child(4n-7)) {
-  cursor: url("../images/cursors/Link.cur"), auto;
-}
-
-article:nth-child(2) section ul li:not(:nth-child(4n-7)):focus {
-  /* background-color: #ECE6B0; */
-  outline: none;
-}
-
-article:nth-child(2) section ul li:focus p {
+article:nth-child(2) section ul li button:focus h6 {
   color: var(--item-lijst-focus)
 }
 
-article:nth-child(2) section ul li:focus p:before {
+article:nth-child(2) section ul li button:focus {
+  padding-left: 5%;
+}
+
+article:nth-child(2) section ul li button:focus:before {
 
   /* https://codepen.io/carstenmeyer/pen/MjYZBr */
 
@@ -632,11 +760,16 @@ article:nth-child(2) section ul li:focus p:before {
 
   padding-right: 0.5em;
 
-  display: inline-block;
-  vertical-align: bottom;
+  display: inline-flex;
+  /* vertical-align: center; */
+  align-items: center;
 
-  width: 0;
-  height: 0;
+  position: absolute;
+  height: 25%;
+  left: 1%;
+
+  /* width: 100%; */
+  /* height: 0; */
 }
 
 article:nth-child(2) section ul li:not(:nth-child(4n-7)):after {
@@ -650,6 +783,7 @@ article:nth-child(2) section ul li:not(:nth-child(4n-7)):after {
 
 article:nth-child(2) section ul li:nth-child(4n-7) {
   margin-bottom: 0;
+  padding-bottom: 1em;
   border-radius: 0.5em 0.5em 0 0;
   background-color: var(--item-lijst-titel-bg);
 }
@@ -658,24 +792,101 @@ article:nth-child(2) section ul li:nth-child(4n-7):not(:first-of-type) {
   margin-top: 1.5em;
 }
 
-article:nth-child(2) section ul li h5 {
-  margin: 0;
-  padding: 0;
-
-  text-transform: uppercase;
-
-  color: var(--item-lijst-accenten);
-  font-size: 12px;
-  font-weight: bold;
+article:nth-child(2) section:nth-child(2) ul li button img {
+  height: 2em;
+  cursor: url("../images/cursors/Move.cur"), auto;
+  z-index: 999;
 }
 
-article:nth-child(2) section:nth-child(2) ul li img {
-  height: 1.75em;
+article:nth-child(2) section:nth-child(2) ul li:nth-child(n+6) button img {
+  height: 2.3em;
 }
 
-article:nth-child(2) section ul li p {
-  text-transform: uppercase;
+
+
+
+
+
+/* -------------------------- 
+ ----------- Drag -----------
+ ----------------------------  */
+
+
+div {
+  position: absolute;
+  bottom: 5em;
+  left: 10em;
+
+  /* left: 50%;
+  transform: translate(-50%, 0); */
+
+  z-index: 999;
 }
+
+
+
+div img {
+
+  height: 5em;
+
+  /* ANIMATIE GEPROBEERD */
+
+  /* position: absolute; */
+  /* background-color: green; */
+
+  /* animation-name: steenAnimatie;
+    animation-duration: 1.25s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+
+    transform-origin: center center; */
+
+  /* filter: drop-shadow(3px 3px 6px #e9ef75); */
+
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+}
+
+/* ANIMATIE GEPROBEERD - .steenStyling */
+
+/* @keyframes steenAnimatie {
+  0% {
+    transform: scale(1.5) rotate(-30deg);
+  }
+
+  50% {
+    transform: scale(1.5) rotate(0);
+  }
+
+  100% {
+    transform: scale(1.5) rotate(-30deg);
+  }
+} */
+
+
+.geevolueerd {
+  /* Hier kan iets */
+}
+
+.sortable-ghost {
+  opacity: 0;
+}
+
+.sortable-chosen {
+
+  /* Hier kan nog iets */
+
+  /* transform: scale(2); */
+}
+
+div img {
+  display: block;
+}
+
+div img.wegsteen {
+  display: none;
+}
+
 
 
 /* -------------------------- 
@@ -689,10 +900,43 @@ footer {
 
 
 
-
 /* --- VERBERGEN SCROLLBAR --- */
 
 article:nth-child(2) section ul::-webkit-scrollbar,
 article:nth-child(1) section:nth-child(2)::-webkit-scrollbar {
   display: none;
+}
+
+
+/* -------------------------- 
+ ------ Media Queries -------
+ ----------------------------  */
+
+@media only screen and (max-width: 1300px) {
+
+  article:nth-child(1) section:nth-child(2) button p {
+    font-size: 10px;
+    /* color: red; */
+  }
+
+  article:nth-child(1) section:nth-child(1) ul li button img {
+    height: 3em;
+    /* background-color: red; */
+  }
+}
+
+@media (prefers-color-scheme: light) {
+
+  html,
+  body {
+    background-color: #3888F0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  html,
+  body {
+    background-color: black;
+  }
 }

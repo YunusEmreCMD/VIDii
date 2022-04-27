@@ -18,36 +18,52 @@
 	<header>
 		<ul>
 			<li>
-				<label>
-					<input type="checkbox">
-					<span></span>
-				</label>
+				<button>
+					<label>
+						<input type="checkbox">
+						<span></span>
+					</label>
+				</button>
 			</li>
 			<li>
-				<p>Gras-gebied</p>
+				<button>
+					<input id="normale-gebied" type="radio" name="radio" checked="checked">
+					<label for="normale-gebied">Normale-gebied</label>
+				</button>
 			</li>
 			<li>
-				<p>Ijs-gebied</p>
+				<button>
+					<input id="gras-gebied" type="radio" name="radio">
+					<label for="gras-gebied">Gras-gebied</label>
+				</button>
+			</li>
+			<li>
+				<button>
+					<input id="ijs-gebied" type="radio" name="radio">
+					<label for="ijs-gebied">Ijs-gebied</label>
+				</button>
 			</li>
 		</ul>
+
 	</header>
 
 	<main>
+
 		<!----- VENSTER 1 ----->
 
 		<article>
 
 			<section>
 				<ul>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
-					<li><img src="./images/pokemons/eevee.png" alt=""></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
+					<li><button><img src="./images/pokemons/eevee.png" alt=""></button></li>
 				</ul>
 			</section>
 
@@ -55,7 +71,9 @@
 			<!----- TEKST ----->
 
 			<section>
-				<p>Welkom bij Eeveelutions, het doel is om alle eevee's te evolueren.</p>
+				<button tabindex="-1">
+					<p>Welkom bij Eeveelutions, het doel is om alle eevee's te evolueren. </p>
+				</button>
 			</section>
 
 
@@ -111,6 +129,9 @@
 			</ul>
 
 			<section>
+				<div>
+					<img class="testimg" src="" alt="">
+				</div>
 				<section>
 					<img src="./images/pokemons/eevee2.png" alt="">
 					<img src="./images/pokemons/flareon2.png" alt="">
@@ -124,17 +145,23 @@
 					<li>
 						<h5>Stenen</h5>
 					</li>
-					<li tabindex="1">
-						<p>Fire Stone</p>
-						<img src="./images/items/firestone.png" alt="">
+					<li>
+						<button>
+							<h6>Fire Stone</h6>
+							<img src="./images/items/firestone.png" alt="">
+						</button>
 					</li>
-					<li tabindex="2">
-						<p>Water Stone</p>
-						<img src="./images/items/waterstone.png" alt="">
+					<li>
+						<button>
+							<h6>Water Stone</h6>
+							<img src="./images/items/waterstone.png" alt="">
+						</button>
 					</li>
-					<li tabindex="3">
-						<p>Thunder stone</p>
-						<img src="./images/items/thunderstone.png" alt="">
+					<li>
+						<button>
+							<h6>Thunder stone</h6>
+							<img src="./images/items/thunderstone.png" alt="">
+						</button>
 					</li>
 
 
@@ -145,17 +172,23 @@
 					<li>
 						<h5>Potions</h5>
 					</li>
-					<li tabindex="4">
-						<p>Super Potion</p>
-						<img src="./images/items/superpotion.png" alt="">
+					<li>
+						<button>
+							<h6>Super Potion</h6>
+							<img src="./images/items/superpotion.png" alt="">
+						</button>
 					</li>
-					<li tabindex="5">
-						<p>Hyper Potion</p>
-						<img src="./images/items/hyperpotion.png" alt="">
+					<li>
+						<button>
+							<h6>Hyper Potion</h6>
+							<img src="./images/items/hyperpotion.png" alt="">
+						</button>
 					</li>
-					<li tabindex="6">
-						<p>Max Potion</p>
-						<img src="./images/items/maxpotion.png" alt="">
+					<li>
+						<button>
+							<h6>Max Potion</h6>
+							<img src="./images/items/maxpotion.png" alt="">
+						</button>
 					</li>
 
 
@@ -165,16 +198,18 @@
 					<li>
 						<h5>Extra</h5>
 					</li>
-					<li tabindex="7">
-						<p>Rare Candy</p>
-						<img src="./images/items/rare-candy.png" alt="">
+					<li>
+						<button>
+							<h6>Rare Candy</h6>
+							<img src="./images/items/rare-candy.png" alt="">
+						</button>
 					</li>
 				</ul>
 			</section>
 
-			<section>
+			<button>
 				<!-- <img src="/images/items/new-bag.png" alt=""> -->
-			</section>
+			</button>
 
 		</article>
 
@@ -184,6 +219,7 @@
 		<p>Yunus Emre Alkan | Interactie & Interface</p>
 	</footer>
 
+	<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 	<script src="scripts/script.js"></script>
 </body>
 
