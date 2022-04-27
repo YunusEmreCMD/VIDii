@@ -569,7 +569,7 @@ var boxBorder = document.querySelector("article:nth-child(1) section:nth-child(1
 function veranderOmgevingNormaal() {
   console.log("normaal");
 
-  boxBg.style.backgroundImage = "url('../images/achtergronden/aarde2.png')";
+  boxBg.style.backgroundImage = "url('images/achtergronden/aarde2.png')";
 
   tekstVeldBorder.classList.remove("gras-omgeving");
   boxBorder.classList.remove("gras-omgeving");
@@ -587,7 +587,7 @@ radioNormaal.addEventListener("change",veranderOmgevingNormaal);
 function veranderOmgevingGras() {
   console.log("gras");
 
-  boxBg.style.backgroundImage = "url('../images/achtergronden/gras4.png')";
+  boxBg.style.backgroundImage = "url('images/achtergronden/gras4.png')";
 
   tekstVeldBorder.classList.remove("ijs-omgeving");
   boxBorder.classList.remove("ijs-omgeving");
@@ -603,7 +603,7 @@ radioGroen.addEventListener("change",veranderOmgevingGras);
 function veranderOmgevingIjs() {
   console.log("Ijs");
 
-  boxBg.style.backgroundImage = "url('../images/achtergronden/sneeuw2.png')";
+  boxBg.style.backgroundImage = "url('images/achtergronden/sneeuw2.png')";
 
   tekstVeldBorder.classList.remove("gras-omgeving");
   boxBorder.classList.remove("gras-omgeving");
