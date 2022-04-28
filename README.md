@@ -111,6 +111,12 @@ Zwart
   #### oplossing:
   Ik ben de titels dikgedrukt gaan maken en heb aan de onderkant meer spacing gegeven, waardoor de onderscheid duidelijker is.
   
+    ### Bevinding 4:
+  Contrast was niet hoog genoeg in de item-bag
+  
+  #### oplossing:
+  Ik heb de contrast verhoogd in de item-bag door de titels een andere kleur te geven.
+  
 
 </details>
 
