@@ -172,7 +172,7 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
   ### Dit ging goed/Heb ik geleerd: 
   Korte omschrijving met plaatje(s)
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  <img src="readme-images/trots.png" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
@@ -192,7 +192,7 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
 
 Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-1. bron 1
+1. https://css-tricks.com/useful-nth-child-recipies/*/
 2. bron 2
 3. ...
 
