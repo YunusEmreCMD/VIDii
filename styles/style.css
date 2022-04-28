@@ -5,9 +5,9 @@
   box-sizing: border-box;
 }
 
-/* -------------------------- 
- ----- Ingelade Fonts ------ 
- ----------------------------  */
+/*--------------------------------- 
+---------- FONTS INLADEN ---------- 
+-----------------------------------*/
 
 @font-face {
   font-family: "gameboy-font";
@@ -22,15 +22,12 @@
 }
 
 
-/* -------------------------- 
- --------- Variabele -------- 
- ----------------------------  */
+/*--------------------------------------
+----------- CUSTOM PROPERTIES ----------- 
+-----------------------------------------*/
 
 :root {
-  --body-bg: #3888F0;
-  --venster-bg: #F8F0D8;
-
-  --min-width-main: 900px;
+  --min-width-main: 1000px;
   --max-width-main: 1400px;
 
   --gameboy-font: gameboy-font;
@@ -38,16 +35,10 @@
 
   --tekst-venster-line-height: 2em;
   --tekst-venster-bg: #ffffff;
-
-  --venster2-info-lijst-bg: #D0C8B8;
-
-  --item-lijst-bg: #F0C870;
-  --item-lijst-focus: blue;
-  --item-lijst-titel-bg: #f4ae17;
-  --item-lijst-accenten: #ECE6B0;
+  --tekst-venster-kleur: #000000;
 
 
-  /* VERSCHILLENDE BOXEN */
+  /* VERSCHILLENDE BOXEN/GEBIEDEN */
 
   /* Normale gebied */
   --normale-gebied-licht: #F8CE9D;
@@ -58,50 +49,109 @@
   --gras-gebied-donker: #78A068;
 
   /* Ijs gebied */
-  --ijs-gebied-licht: #ececec;
-  --ijs-gebied-donker: #cfcfcf;
+  --ijs-gebied-licht: #bad4e2;
+  --ijs-gebied-donker: #98acba;
+
+  /* Items */
+  --item-lijst-bg: #ffd780;
+  --item-lijst-accenten: #e6b347;
+  --item-lijst-kleuren: #534323;
+
+  --item-lijst-titel-bg: #e6b347;
+  --item-lijst-titel-kleur: #000000;
+
+  --item-lijst-focus: blue;
+
+  /* uitzondering eevee knop kleuren */
+  --umbreon-knop-kleur: black;
+}
+
+@media (prefers-color-scheme:light) {
+  :root {
+    --body-bg: #9D7443;
+    --header-focus: black;
+
+    --venster-bg: #F8F0D8;
+
+    --venster2-info-lijst-bg: #D0C8B8;
+
+    /* --item-lijst-bg: #ffd780;
+    --item-lijst-accenten: #e6b347;
+    --item-lijst-kleuren: #534323;
+
+    --item-lijst-titel-bg: #e6b347;
+    --item-lijst-titel-kleur: #000000; */
+
+    --normale-gebied-bg: #9D7443;
+    --gras-gebied-bg: #78A068;
+    --ijs-gebied-bg: #98acba;
+
+    --tekstKleur: green;
+  }
+}
+
+@media (prefers-color-scheme:dark) {
+  :root {
+    --body-bg: #402d16;
+    --header-focus: #f4ae17;
+
+    --venster-bg: rgb(27, 26, 26);
+
+    --venster2-info-lijst-bg: rgb(54, 53, 53);
+
+    /* --item-lijst-bg: #ffd780;
+    --item-lijst-accenten: #e6b347;
+    --item-lijst-kleuren: #534323;
+
+    --item-lijst-titel-bg: #e6b347;
+    --item-lijst-titel-kleur: #000000; */
+
+    --normale-gebied-bg: #402d16;
+    --gras-gebied-bg: #3d622e;
+    --ijs-gebied-bg: #2f5b7b;
+
+    --tekst-kleur: white;
+  }
 }
 
 
 
-html,
-body {
-  /* height: 100%; */
-  background-color: var(--body-bg);
-
-  margin: 2em;
-  /* overflow: hidden; */
-
-  /* font-family: var(--gameboy-font); */
-  font-family: var(--pokemon-font);
-  font-size: 12px;
-
+html {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2em;
 
+  padding-top: 5em;
+}
+
+body {
+  background-color: var(--body-bg);
+  /* background-image: url("../images/achtergronden/aarde2.png"); */
+
+  margin-top: 4em;
+
+  font-family: var(--pokemon-font);
+  font-size: 12px;
+  /* color: yellow; */
+
+  /* zorgt ervoor dat tekst niet geselecteerd kan worden */
   user-select: none;
 
+  /* zorgt ervoor dat er een vaste breedte is */
+  min-width: var(--min-width-main);
+  max-width: var(--max-width-main);
+
+  /* standaard cursor */
   cursor: url("../images/cursors/Alternate.cur"), auto;
 }
 
-/* img {
-  user-drag: none;
-  -webkit-user-drag: none
-} */
-
 body.slepen {
+  /* verandert de cursor naar "vastpakken" wanneer je een "Evalutatie steen" vastpakt */
   cursor: url("../images/cursors/Move.cur"), auto;
-  /* background-color: red; */
 }
 
-/* html.darkmode,
-body.darkmode {
-  background-color: black;
-} */
-
+/* textshadow op alle tekst toepassen */
 h1,
 h2,
 h3,
@@ -111,8 +161,19 @@ h6,
 p,
 button {
   text-shadow: 0.75px 0.75px 1.5px rgba(0, 0, 0, 0.5);
+  color: var(--tekst-kleur);
 }
 
+h1 {
+  font-size: 18px;
+}
+
+img {
+  /* zorgt ervoor dat plaatjes niet gesleept kunnen worden */
+  /* https://caniuse.com/?search=user-drag */
+  user-drag: none;
+  -webkit-user-drag: none
+}
 
 /* -------------------------- 
  ----------- Header --------- 
@@ -124,6 +185,7 @@ header {
   background-color: var(--venster-bg);
 
   padding: 2em;
+  margin: 2em 0;
 
   border: 0.5em solid gray;
   border-radius: 0.75em;
@@ -137,25 +199,22 @@ header ul {
 
   display: flex;
   align-items: center;
-  /* flex-direction: row-reverse; */
   gap: 5em;
+
+  height: 1em;
 }
 
 header ul li {
   list-style-type: none;
 }
 
-header ul li button:focus {
+header ul li button:focus>label {
   font-weight: 600;
+  font-size: 14px;
+  color: var(--header-focus);
 }
 
-header ul li:nth-child(1) {
-  display: none;
-}
-
-
-/* Radio button active */
-
+/* selecteert alle radio-buttons */
 header ul li button input[type='radio'] {
   display: none;
 }
@@ -166,20 +225,21 @@ header ul li button input:checked+label {
 
 
 
-/* -------------------------- 
- ----------- Main -----------
- ----------------------------  */
+/* ----------------------- 
+---------- MAIN ----------
+--------------------------*/
 
 main {
   display: flex;
   gap: 3em;
 
-  min-width: var(--min-width-main);
-  max-width: var(--max-width-main);
+  /* min-width: var(--min-width-main);
+  max-width: var(--max-width-main); */
 }
 
 
-/* --- VENSTER PROPERTIES - ALGEMEEN --- */
+
+/* ALGEMEEN STIJLING - VENSTERS -  */
 
 article {
   background-color: var(--venster-bg);
@@ -195,7 +255,8 @@ article {
 }
 
 
-/* --- BUTTONS --- */
+
+/* ALGEMENE STIJLING - BUTTONS  */
 
 button,
 input,
@@ -218,7 +279,10 @@ button:focus {
 }
 
 
-/* --- VENSTER 1 --- */
+
+/* ---------------------------- 
+---------- VENSTER 1 ----------
+-------------------------------*/
 
 article:nth-child(1) {
   width: 40%;
@@ -226,7 +290,6 @@ article:nth-child(1) {
 
 article:nth-child(1) section:nth-child(1) {
   height: 40em;
-  /* width: 100%; */
 
   padding: 0 3em;
 
@@ -236,11 +299,12 @@ article:nth-child(1) section:nth-child(1) {
   border-radius: 0.75em;
 
   box-shadow: inset 15px 15px 0px var(--normale-gebied-licht), inset -15px -15px 0px var(--normale-gebied-donker);
+
   overflow: hidden;
 }
 
 
-/* --- ALLE EEVEE'S --- */
+/* ALLE EEVEE'S */
 
 article:nth-child(1) section:nth-child(1) ul {
   display: flex;
@@ -273,16 +337,17 @@ article:nth-child(1) section:nth-child(1) ul li button img {
   height: 4em;
 }
 
-/* -------------------------- 
- ------ Tekst Venster ------- 
- ----------------------------  */
+
+
+/* -------------------------------- 
+---------- TEKST VENSTER ----------
+-----------------------------------*/
 
 article:nth-child(1) section:nth-child(2) {
-
   margin-top: 2em;
   padding: 1.5em 2em;
 
-  height: 10em;
+  height: 12em;
 
   font-size: 12px;
 
@@ -293,42 +358,39 @@ article:nth-child(1) section:nth-child(2) {
 
   box-shadow: inset 0px 0px 0px 5px var(--normale-gebied-licht);
 
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 
+/* BOXEN/GEBIEDEN */
 
-/* Gras omgeving properties */
-
-article:nth-child(1) section:nth-child(1).gras-omgeving {
+/* gras gebied properties */
+.gras-gebied article:nth-child(1) section:nth-child(1) {
   box-shadow: inset 15px 15px 0px var(--gras-gebied-licht), inset -15px -15px 0px var(--gras-gebied-donker);
 }
 
-article:nth-child(1) section:nth-child(2).gras-omgeving {
+.gras-gebied article:nth-child(1) section:nth-child(2) {
   border: 0.5em solid var(--gras-gebied-donker);
   box-shadow: inset 0px 0px 0px 5px var(--gras-gebied-licht);
 }
 
-article:nth-child(1) section:nth-child(2).gras-omgeving {
+.gras-gebied article:nth-child(1) section:nth-child(2) {
   box-shadow: inset 0px 0px 0px 5px var(--gras-gebied-licht);
 }
 
-
-/* Ijs omgeving properties */
-
-article:nth-child(1) section:nth-child(1).ijs-omgeving {
+/* ijs gebied properties */
+.ijs-gebied article:nth-child(1) section:nth-child(1) {
   box-shadow: inset 15px 15px 0px var(--ijs-gebied-licht), inset -15px -15px 0px var(--ijs-gebied-donker);
 }
 
-article:nth-child(1) section:nth-child(2).ijs-omgeving {
+.ijs-gebied article:nth-child(1) section:nth-child(2) {
   border: 0.5em solid var(--ijs-gebied-donker);
   box-shadow: inset 0px 0px 0px 5px var(--ijs-gebied-licht);
 }
 
-article:nth-child(1) section:nth-child(2).ijs-omgeving {
+.ijs-gebied article:nth-child(1) section:nth-child(2) {
   box-shadow: inset 0px 0px 0px 5px var(--ijs-gebied-licht);
 }
-
 
 
 article:nth-child(1) section:nth-child(2) button p {
@@ -337,23 +399,17 @@ article:nth-child(1) section:nth-child(2) button p {
 
   font-size: 12px;
   text-align: left;
-
-  /* color: darkgray; */
+  color: var(--tekst-venster-kleur);
 
   line-height: var(--tekst-venster-line-height);
   text-shadow: 0.75px 0.75px 1.5px rgba(0, 0, 0, 0.5);
 }
 
-article:nth-child(1) section:nth-child(2) button:focus p {
-  /* color: black; */
-}
 
 
-
-
-/* -------------------------- 
- -------- TypeWriter -------- 
- ----------------------------  */
+/* ----------------------------- 
+---------- TYPEWRITER ----------
+--------------------------------*/
 
 /* https://codepen.io/alvaromontoro/pen/LYLZOrE */
 
@@ -393,6 +449,9 @@ article:nth-child(1) section:nth-child(2) button p.typewriter::before {
 }
 
 
+/* ANIMTIES VOOR - TYPEWRITER */
+
+/* verandert de line-height */
 @keyframes grow {
   0% {
     max-height: var(--lineHeight);
@@ -403,6 +462,7 @@ article:nth-child(1) section:nth-child(2) button p.typewriter::before {
   }
 }
 
+/* springt naar volgende regel */
 @keyframes carriageReturn {
   0% {
     top: 0;
@@ -413,6 +473,7 @@ article:nth-child(1) section:nth-child(2) button p.typewriter::before {
   }
 }
 
+/* typen */
 @keyframes type {
   0% {
     width: 100%;
@@ -425,36 +486,10 @@ article:nth-child(1) section:nth-child(2) button p.typewriter::before {
 
 
 
-article:nth-child(1) section:nth-child(2) button p::after {
 
-  /* https://codepen.io/carstenmeyer/pen/MjYZBr */
-
-  /* content: "";
-
-  border-top: 0.85em solid transparent;
-  border-bottom: 0.85em solid transparent;
-  border-left: 0.85em solid #E70912;
-
-  transform: rotate(90deg);
-
-  margin-left: 0.5em;
-
-  display: inline-block;
-  vertical-align: middle;
-
-  width: 0;
-  height: 0; */
-}
-
-article:nth-child(1) section:nth-child(2) button p.kort:after {
-  content: none;
-}
-
-
-
-/* -------------------------- 
- -------- Venster 2 -------- 
- ----------------------------  */
+/* ----------------------------- 
+---------- VENSTER 2 -----------
+--------------------------------*/
 
 article:nth-child(2) {
   width: 60%;
@@ -471,34 +506,32 @@ article:nth-child(2) section:nth-child(2) section img {
   /* background-color: red; */
 }
 
-/* article:nth-child(2) section:nth-child(2) div {
-  height: 15em;
-  width: 15em;
-  background-image: url("../images/pokemons/eevee2.png");
-  background-size: cover;
-} */
-
 article:nth-child(2) ul {
   padding: 0.2em;
   margin: 0;
 
+  border-radius: 0.5em;
+
   width: 50%;
 
   background-color: var(--venster2-info-lijst-bg);
-  border-radius: 0.5em;
 }
 
 article:nth-child(2) ul li {
   list-style-type: none;
 
-  padding: 0.75em 0 1.5em 0.75em;
-  /* padding: 0.75em 0.5em; */
+
 
   border-radius: 0.3em;
 
   text-transform: none;
 }
 
+article:nth-child(2)>ul li {
+  padding: 0.75em 0 1.5em 0.75em;
+}
+
+/* spreekt alleen li-items aan die even zijn 2,4,6 etc. */
 article:nth-child(2)>ul li:nth-child(odd) {
   background-color: var(--venster-bg);
 
@@ -512,27 +545,31 @@ article:nth-child(2) p {
   padding: 0;
 }
 
+article:nth-child(2)>ul li h2 {
+  margin: 0;
 
-/* -------------------------- 
- -------- Evolueren -------- 
- ----------------------------  */
+  font-size: 12px;
+}
+
+
+
+/* ----------------------------- 
+---------- EVOLUEREN -----------
+--------------------------------*/
 
 article:nth-child(2) section {
-  /* margin: 0 2em; */
   padding: 0;
   margin: 0 auto;
 }
 
 article:nth-child(2) section:nth-child(2)>section {
-  /* margin: 0 auto; */
   position: relative;
   width: 100%;
+
   transform-origin: center center;
 }
 
-
-/* Normale Eevee - Evolueren met steen */
-
+/* normale Eevee - evolueren met steen, na slepen */
 article:nth-child(2) section:nth-child(2) section>img:nth-child(1).evolve {
   animation-name: veranderNaarWit, evolutie, evolutie, evolutie, geevolueerd;
   animation-duration: 1s, 0.5s, 0.2s, 0.12s, 0s;
@@ -543,12 +580,8 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(1).evolve {
   animation-direction: normal, alternate, alternate, alternate, alternate;
 }
 
-
-/* Evaluatie Eevee */
-
+/* eevee die gevolueerd is */
 article:nth-child(2) section:nth-child(2) section>img:nth-child(2) {
-  /* background-color: red; */
-
   position: absolute;
   right: 0;
   transform: scale(0.1);
@@ -559,9 +592,7 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(2) {
   filter: brightness(0) invert(1);
 }
 
-
-/* Evaluatie Eevee - Evolueren met steen */
-
+/* evaluatie Eevee - evolueren met steen, na slepen */
 article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
   animation-name: display, evolutie, evolutie, evolutie, geevolueerd;
   animation-duration: 0.1s, 0.5s, 0.2s, 0.12s, 0.35s;
@@ -573,8 +604,9 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
 }
 
 
-/* Evolueren Animatie */
+/* ANIMTIES VOOR - EVALUATIE */
 
+/* verandert de images naar wit */
 @keyframes veranderNaarWit {
   0% {
     filter: brightness(1) invert(0);
@@ -585,6 +617,7 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
   }
 }
 
+/* zorgt ervoor dat evaluatie eevee, niet zichtbaar wordt*/
 @keyframes display {
   0% {
     opacity: 1;
@@ -595,7 +628,7 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
   }
 }
 
-
+/* de evaluatie zelf, heen en weer */
 @keyframes evolutie {
   0% {
     transform: scale(1);
@@ -606,6 +639,7 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
   }
 }
 
+/* verandert de posities na evaluatie */
 @keyframes geevolueerd {
   0% {
     transform: scale(1);
@@ -613,17 +647,42 @@ article:nth-child(2) section:nth-child(2) section>img:nth-child(2).evolve {
   }
 
   100% {
-    transform: scale(0.1);
+    transform: scale(0.01);
     filter: brightness(0) invert(1);
   }
 }
 
 
+/* UITZONDERING EEVEE'S */
+
+/* uitzondering eevee knop */
+article:nth-child(2) section>button {
+  /* background-color: red; */
+
+  width: calc(40% - 5em);
+
+  position: absolute;
+  right: 0;
+
+  margin: 2em 5em 0 0;
+  padding: 1.5em;
+
+  line-height: 1.5em;
+
+  /* display: none; */
+  opacity: 0;
+
+  font-size: 10px;
+}
+
+.umbreon-knop {
+  color: var(--umbreon-knop-kleur);
+}
 
 
-/* -------------------------- 
- -------- Item Bag ---------- 
- ----------------------------  */
+/* ---------------------------- 
+---------- ITEM BAG -----------
+-------------------------------*/
 
 article:nth-child(2)>button {
   position: absolute;
@@ -631,6 +690,7 @@ article:nth-child(2)>button {
   right: 0;
 
   margin: 2em 1em;
+
   background-image: url("../images/items/new-bag.png");
   background-size: cover;
 
@@ -642,6 +702,7 @@ article:nth-child(2)>button {
   cursor: url("../images/cursors/Link.cur"), auto;
 }
 
+/* verandert de posities na evaluatie */
 article:nth-child(2)>button.openklappen {
   background-image: url("../images/items/new-bag-open.png");
 
@@ -649,6 +710,7 @@ article:nth-child(2)>button.openklappen {
   width: 75px;
 }
 
+/* focus op item-bag */
 article:nth-child(2)>button:focus {
   /* outline: auto; */
 
@@ -656,9 +718,10 @@ article:nth-child(2)>button:focus {
 }
 
 
-/* -------------------------- 
- ---------- Items -----------
- ----------------------------  */
+
+/* ------------------------- 
+---------- ITEMS -----------
+----------------------------*/
 
 article:nth-child(2) section ul {
   background-color: var(--item-lijst-bg);
@@ -693,24 +756,18 @@ article:nth-child(2) section ul li {
 
   border-radius: 0;
 
-  /* margin-bottom: 0.5em; */
-  /* background-color: red; */
+  padding: 1.5em 0 0.75em 0.75em;
 }
 
-
-article:nth-child(2) section ul li h5 {
+article:nth-child(2) section ul li h3 {
   margin: 0;
   padding: 0;
 
   text-transform: uppercase;
 
-  color: var(--item-lijst-accenten);
+  color: var(--item-lijst-titel-kleur);
   font-size: 12px;
   font-weight: bold;
-}
-
-article:nth-child(2) section ul li:nth-child(6) button {
-  /* background-color: red; */
 }
 
 article:nth-child(2) section ul li button {
@@ -724,7 +781,7 @@ article:nth-child(2) section ul li button {
   width: 100%;
 }
 
-article:nth-child(2) section ul li button h6 {
+article:nth-child(2) section ul li button h4 {
   margin: 0;
   padding: 0;
 
@@ -732,15 +789,14 @@ article:nth-child(2) section ul li button h6 {
   text-transform: uppercase;
   font-weight: normal;
   text-align: left;
+  color: var(--item-lijst-kleuren);
 }
 
 article:nth-child(2) section ul li:last-child {
   margin-bottom: 6em;
 }
 
-/* https://css-tricks.com/useful-nth-child-recipies/ */
-
-article:nth-child(2) section ul li button:focus h6 {
+article:nth-child(2) section ul li button:focus h4 {
   color: var(--item-lijst-focus)
 }
 
@@ -748,9 +804,8 @@ article:nth-child(2) section ul li button:focus {
   padding-left: 5%;
 }
 
+/* pijltje bij item selectie -  inspiratie: https://codepen.io/carstenmeyer/pen/MjYZBr */
 article:nth-child(2) section ul li button:focus:before {
-
-  /* https://codepen.io/carstenmeyer/pen/MjYZBr */
 
   content: "";
 
@@ -767,11 +822,10 @@ article:nth-child(2) section ul li button:focus:before {
   position: absolute;
   height: 25%;
   left: 1%;
-
-  /* width: 100%; */
-  /* height: 0; */
 }
 
+
+/* selecteert elke 4e element - https://css-tricks.com/useful-nth-child-recipies/*/
 article:nth-child(2) section ul li:not(:nth-child(4n-7)):after {
   content: "";
   width: calc(100% - 1em);
@@ -798,19 +852,16 @@ article:nth-child(2) section:nth-child(2) ul li button img {
   z-index: 999;
 }
 
+/* selecteert alle elementen na de 6e child */
 article:nth-child(2) section:nth-child(2) ul li:nth-child(n+6) button img {
   height: 2.3em;
 }
 
 
 
-
-
-
-/* -------------------------- 
- ----------- Drag -----------
- ----------------------------  */
-
+/* --------------------------------- 
+---------- STENEN SLEPEN -----------
+------------------------------------*/
 
 div {
   position: absolute;
@@ -863,11 +914,7 @@ div img {
   }
 } */
 
-
-.geevolueerd {
-  /* Hier kan iets */
-}
-
+/* zorget ervoor dat het geen clone wordt */
 .sortable-ghost {
   opacity: 0;
 }
@@ -875,7 +922,6 @@ div img {
 .sortable-chosen {
 
   /* Hier kan nog iets */
-
   /* transform: scale(2); */
 }
 
@@ -883,6 +929,7 @@ div img {
   display: block;
 }
 
+/* haalt na slepen en loslaten de steen weg */
 div img.wegsteen {
   display: none;
 }
@@ -890,22 +937,23 @@ div img.wegsteen {
 
 
 /* -------------------------- 
- ---------- Footer -----------
- ----------------------------  */
+---------- FOOTER -----------
+-----------------------------*/
 
 footer {
-  font-size: 10px;
-  color: var(--item-lijst-accenten);
+  font-size: 12px;
+  color: white;
+  /* text-align: center; */
+
+  margin-top: 2em;
 }
 
-
-
-/* --- VERBERGEN SCROLLBAR --- */
-
+/* VERBERGEN SCROLLBAR */
 article:nth-child(2) section ul::-webkit-scrollbar,
 article:nth-child(1) section:nth-child(2)::-webkit-scrollbar {
   display: none;
 }
+
 
 
 /* -------------------------- 
@@ -916,27 +964,26 @@ article:nth-child(1) section:nth-child(2)::-webkit-scrollbar {
 
   article:nth-child(1) section:nth-child(2) button p {
     font-size: 10px;
-    /* color: red; */
   }
 
   article:nth-child(1) section:nth-child(1) ul li button img {
     height: 3em;
-    /* background-color: red; */
   }
 }
 
+/* stijling voor light/dark mode */
 @media (prefers-color-scheme: light) {
 
-  html,
-  body {
-    background-color: #3888F0;
-  }
+  body {}
 }
 
 @media (prefers-color-scheme: dark) {
 
-  html,
-  body {
-    background-color: black;
+  /* body {
+    background-color: var(--body-bg);
   }
+
+  header {
+    background-color: var(--venster-bg);
+  } */
 }
