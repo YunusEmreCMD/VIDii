@@ -91,13 +91,13 @@ Zwart
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
-
+  De achtergrond was blauw, dit paste niet echt bij de interface, ik was het hiermee eens.
+  
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik ga de kleur aanpassen van de achtergrond, en zelfs nog meer achtergronden maken voor elk gebied.
 
-
-
+<img src="readme-images/blauwe-bg.png" width="375px" alt="eerste versie/schets">
+  
   ### Bevinding 2:
   Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
 
@@ -192,8 +192,11 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
 
 Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-1. https://css-tricks.com/useful-nth-child-recipies/*/
-2. bron 2
-3. ...
+1. https://css-tricks.com/useful-nth-child-recipies/
+2. https://codepen.io/carstenmeyer/pen/MjYZBr
+3. https://sortablejs.github.io/Sortable/
+4. https://rankedboost.com/pokemon-lets-go/evolution-items/
+5. https://www.serebii.net/fireredleafgreen/items.shtml
+6. https://codepen.io/shooft/pen/MWrBOao?editors=0010
 
 </details>
