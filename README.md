@@ -184,6 +184,56 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
   Ik heb geleerd om drag and drop toe te passen in een website, dit vond ik zelf het tofst, omdat ik in het begin geen idee had hoe ik het moest doen, en het is gelukt!
 
   <img src="readme-images/trots.png" width="375px" alt="top">
+  
+  <code>
+    /* ANIMTIES VOOR - EVALUATIE */
+
+/* verandert de images naar wit */
+@keyframes veranderNaarWit {
+  0% {
+    filter: brightness(1) invert(0);
+  }
+
+  100% {
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* zorgt ervoor dat evaluatie eevee, niet zichtbaar wordt*/
+@keyframes display {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* de evaluatie zelf, heen en weer */
+@keyframes evolutie {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.1);
+  }
+}
+
+/* verandert de posities na evaluatie */
+@keyframes geevolueerd {
+  0% {
+    transform: scale(1);
+    filter: brightness(1) invert(0);
+  }
+
+  100% {
+    transform: scale(0.01);
+    filter: brightness(0) invert(1);
+  }
+}
+  </code>
 
 
   ### Dit was lastig/Is niet gelukt:
