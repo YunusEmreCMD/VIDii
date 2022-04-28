@@ -44,7 +44,7 @@ Zwart
 
 ## Voortgang/Feedback 1
 
-  In de eerste les ben ik eerst inspiratie gaan opdoen, ik ben daarom ook een moodboard gaan maken. Een moodboard met plaatjes van verschillende interfaces en informatie over de Eeevee's. Ook heb ik een video van de evolutie van Eevee gevonden, als ik tijd heb, wil ik deze ook graag maken. De 2e les ben ik mijn 3 concepten gaan laten zien aan mijn medestudenten, ik ben zelf doorgegaan met concept 1, omdat ik die zelf het leukst vond om te maken. Ik ben een wat betere schets gaan maken en heb hier feedback op gevraagd.
+  In de eerste les ben ik eerst inspiratie gaan opdoen, ik ben daarom ook een moodboard gaan maken. Een moodboard met plaatjes van verschillende interfaces en informatie over de Eeevee's. Ook heb ik een video van de evolutie van Eevee gevonden, als ik tijd heb, wil ik deze ook graag maken. De 2e les ben ik mijn 3 concepten gaan laten zien aan mijn medestudenten, ik ben zelf doorgegaan met concept 1, omdat ik die zelf het leukst vond om te maken. Ik ben een wat betere schets gaan maken en heb hier feedback op gevraagd. Ik kreeg hier ook gelijk bevestiging op dat het een uniek en bijpassende interface was van Jorinda en andere klasgenoten.
 
 <details>
   
@@ -54,7 +54,7 @@ Zwart
   De knoppen indeling wijzigen aan de bovenkant van het scherm.
 
   #### oplossing:
-  Nog mee bezig...
+  Ik ben minder
 
   
   ### Bevinding 2:
@@ -65,10 +65,10 @@ Zwart
 
   
   ### Bevinding 3:
-  De pointer aanpassen
+  Ze gaf aan dat het leuk zou zijn om een custom pointer te hebben.
   
   #### oplossing:
-  Nog mee bezig...
+  Dit is een goed punt, ik ga een leuke zoeken en toevoegen aan de website.
   
   
   ### Bevinding 4:
@@ -76,13 +76,6 @@ Zwart
   
   #### oplossing:
   Ik ben de item-bag op een andere plek gaan neerzetten, waardoor de pop-up goed bij het geheel past.
-  
-  
-  ### Bevinding 5:
-  Er zijn nog geen specifieke easter-eggs.
-  
-  #### oplossing:
-  Nog mee bezig...
 
 </details>
 
@@ -122,8 +115,11 @@ Zwart
 <details>
   <summary>Mijn bevindingen + wijzigingen (minimaal 5)</summary>
   
+  De 3e keer feedback kreeg ik van Aaron, hij was gelijk enthousiast over mijn idee en interface. Ook hier kreeg ik een bevestiging op dat mijn interface uniek was en erg bijpassend met het ontwerp. Vooral de box waarin de pokemons, vond Aaron tof, omdat deze identiek is aan de box in de game. Hij had ook nog een aantal goede punten, waar ik zelf ook over had nagedacht, maar later wou gaan uitwerken indien ik nog tijd over zou gaan hebben.
+
+ 
   ### Bevinding 1:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  In de tekst-venster, de belangrijke woorden highliten. Denk aan de verschillende items die genoemd worden.
 
   #### oplossing:
   Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
@@ -131,15 +127,15 @@ Zwart
 
 
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  De interactie met het slepen van de items is ook leuk gedaan kreeg ik te horen, alleen het was onduidelijk dat je moest dubbelklikken en dan slepen.
+
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
+  Ik ben deze ook later gaan aanpassen, nu krijg je een tip van een eevee dat je kunt dubbelklikken en slepen met de items.
+  Ik had ook bedacht dat je in 1x kon slepen uit je rugtas naar de eevee toe. Alleen dit ging niet goed, omdat ik overflow: scroll had op de parent.
+  Ik kon de potions verwijderen uit de rugtas en overflow: scroll er af halen. Maar ik vond het wel leuk om eerst het steentje groot te maken en te animeren.
+  Het animeren was wel gelukt, alleen toen zat de sleeppunt weer ergens anders waardoor de steen raar ging doen. Toen heb ik besloten om het animeren weg te laten. Maar wel op dezelfde plek te laten, omdat ik het aan de andere kant ook wel mooi vond om een volle rugtas te hebben. En dat het 1 geheel vormt met meer spirits.
 
-
-
-  ### Bevinding 3:
-  ...
 
 </details>
 
@@ -150,6 +146,21 @@ Zwart
 
 <details>
   <summary>Mijn eindresultaat & persoonlijke ontwikkeling</summary>
+  
+  Het is altijd wel een cliché om te zeggen dat je veel hebt geleerd. Maar ik heb echt veel geleerd, vooral veel nieuwe dingen. Ondanks dat ik mijn interface veel meer extra's kon toevoegen, ben ik onwijs blij met mijn eindresultaat. 
+
+Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd of ik mijn ideeen kon uitwerken. Omdat ik wel erg leergierig ben, wist ik dat het hoe dan ook goed zou komen. Ik ben blij dat ik javascript in het algemeen nu goed begrijp en kan toepassen. Wat ik nieuw heb geleerd:
+  
+  * Drag & Drop
+  * Nieuwe eventListener
+  * setTimeout
+  * if/else statements
+  * Functies hergebruiken
+  * .matched
+  * .contains
+  * prefers-color-scheme:
+  * :nth-child(n+6)
+  * :nth-child(4n-7)
 
   ### Je uitkomst - karakteristiek screenshot(s):
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="final ontwerp">
