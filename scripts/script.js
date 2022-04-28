@@ -54,25 +54,10 @@ function uitzonderingEeveeKnopVullen(tekstInKnop, classToevoegen, achtergrondKle
   uitzonderingEeveeKnop.style.backgroundColor = achtergrondKleurKnop;
 }
 
-// var boxGebied = document.querySelector("article:nth-child(1) section:nth-child(1)");
-
-
-
-// VERWiIJDER CLASSES
-
-// var typewriterDuur = "3500";
-// var evaluatieDuur  = "9000";
 
 function verwijderTypewriter(){
     tekstVenster.classList.remove("typewriter");
 }
-
-// function verwijderEvaluatie(){
-//     normaleEeevee.classList.remove("evolve");
-//     evaluatieEevee.classList.remove("evolve");
-// }
-
-
 
 // Intro tekst
 function veranderTekst(typewriterDuur) {
@@ -293,10 +278,6 @@ function evolveFireStone() {
 
 
 
-
-
-
-
 // Water Stone
 function evolveWaterStone() {
     console.log("Water Stone Evolve - bezig");
@@ -317,7 +298,6 @@ function evolveWaterStone() {
         eevee3.classList.add("geevolueerd");
     }, 7600);
 }
-// waterStone.addEventListener("dblclick", evolveWaterStone);
 
 
 
@@ -359,8 +339,6 @@ function evolveRareCandy() {
 }
 
 
-
-
 // Umbreon
 function evolveUmbreonNacht() {
   console.log("Umbreon Nacht Evolve");
@@ -379,6 +357,7 @@ function evolveUmbreonNacht() {
       uitzonderingEeveeKnop.classList.remove("umbreonKnop");
   }, 7600);
 }
+
 
 // Espeon
 function evolveEspeonDag() {
@@ -420,9 +399,6 @@ function evolveUitzonderingEevee() {
   }
 }
 uitzonderingEeveeKnop.addEventListener("click", evolveUitzonderingEevee);
-
-
-
 
 
 // Leafeon
@@ -468,41 +444,11 @@ function evolveGlaceonIjs() {
 
 
 
-
-
-
-
-
-
-
-// ---------------------------- //
-// ---------- HEADER ---------- //
-// ---------------------------- //
-
-// var tijdToggle = document.querySelector("header ul li:nth-child(1) label input");
-// var html = document.querySelector("html");
-
-// function veranderTijd() {
-//     console.log("Tijd is veranderd");
-//     document.body.classList.toggle("darkmode");
-//     html.classList.toggle("darkmode");
-// }
-// tijdToggle.addEventListener("click", veranderTijd);
-
-
-
-
-
-
-
-
-
-
-
-
 // ---------------------------- //
 // ---------- DRAG ---------- //
 // ---------------------------- //
+
+// https://sortablejs.github.io/Sortable/
 
 // Er wordt niet gesleept
 var slepen = false;
@@ -534,11 +480,6 @@ new Sortable(stenenContainer, {
 });
 
 
-// if(testImg.src == "../images/items/waterstone.png") {
-//   normaleEevee.addEventListener("mouseenter", geefSteen);
-// }
-
-
 normaleEevee.addEventListener("mouseenter", geefSteen);
 
 
@@ -562,6 +503,8 @@ function geefSteen(e) {
 }
 
 
+// drag & drop item
+
 var testImg = document.querySelector("body .testimg");
 
 
@@ -569,7 +512,6 @@ function testImgFuncVuur() {
   console.log("fireestonee");
 
   testImg.src = "images/items/firestone.png";
-  // testImg.classList.add("steenStyling");
 
   steen.classList.remove("wegsteen");
 }
@@ -632,8 +574,6 @@ function checkImg() {
 }
 
 
-
-
 // PROBEREN ALLE EEVEES OP TE HALEN
 
 
@@ -645,10 +585,6 @@ function checkImg() {
 // for (let i = 0; i < alleEevees.length; i++) {
 //   console.log(alleEevees.length);
 // }
-
-
-
-
 
 
 // var alleImages = document.querySelectorAll("article:nth-child(1) section:nth-child(1) ul li img");
@@ -714,36 +650,12 @@ function checkImg() {
 // eevee2.addEventListener("dblclick", alGeevolueerdBoos);
 
 
-
-
 var normaalbg = document.querySelector("header ul li:nth-child(1) button");
 var radioNormaal = document.querySelector("header ul li:nth-child(1) button input[type='radio']");
 var radioGras = document.querySelector("header ul li:nth-child(2) button input[type='radio']");
 var radioIjs = document.querySelector("header ul li:nth-child(3) button input[type='radio']");
 
 var boxBg = document.querySelector("article:nth-child(1) section:nth-child(1)");
-// background-image: url("../images/achtergronden/gras.png");
-
-
-// if (radio.checked = true) {
-//   console.log("nice");
-//   // tekstVenster.innerHTML = "Sanne deze is al geevolueerd!";
-// }
-
-
-// GEBIED VERANDEREN
-
-// function checkGebiedNormaal() {
-//   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-//     boxBg.style.backgroundImage = "url('images/achtergronden/aarde-donker.png')";
-//     document.body.style.backgroundImage = "url('images/achtergronden/aarde-donker.png')";
-//   }
-//   else {
-//     boxBg.style.backgroundImage = "url('images/achtergronden/aarde2.png')";
-//     document.body.style.backgroundImage = "url('images/achtergronden/aarde2.png')";
-//   }
-// }
-// checkGebiedNormaal();
 
 
 // Normale Gebied
@@ -777,7 +689,6 @@ function veranderGebiedGras() {
 radioGras.addEventListener("change",veranderGebiedGras);
 
 
-// var h1 = document.getElementsByTagName("h1");
 
 // Ijs gebied
 function veranderGebiedIjs() {

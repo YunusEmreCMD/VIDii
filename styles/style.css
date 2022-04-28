@@ -34,6 +34,7 @@
   --pokemon-font: pokemon-font;
 
   --tekst-venster-line-height: 2em;
+  --info-venster-line-height: 1.5em;
   --tekst-venster-bg: #ffffff;
   --tekst-venster-kleur: #000000;
 
@@ -68,6 +69,7 @@
 
 @media (prefers-color-scheme:light) {
   :root {
+    /* --body-bg: #6cbce8; */
     --body-bg: #9D7443;
     --header-focus: black;
 
@@ -75,16 +77,13 @@
 
     --venster2-info-lijst-bg: #D0C8B8;
 
-    /* --item-lijst-bg: #ffd780;
-    --item-lijst-accenten: #e6b347;
-    --item-lijst-kleuren: #534323;
-
-    --item-lijst-titel-bg: #e6b347;
-    --item-lijst-titel-kleur: #000000; */
-
     --normale-gebied-bg: #9D7443;
     --gras-gebied-bg: #78A068;
     --ijs-gebied-bg: #98acba;
+
+    /* --normale-gebied-bg: #6cbce8;
+    --gras-gebied-bg: #6cbce8;
+    --ijs-gebied-bg: #6cbce8; */
 
     --tekstKleur: green;
   }
@@ -93,22 +92,20 @@
 @media (prefers-color-scheme:dark) {
   :root {
     --body-bg: #402d16;
+    /* --body-bg: #1B1A1A; */
     --header-focus: #f4ae17;
 
-    --venster-bg: rgb(27, 26, 26);
+    --venster-bg: #1B1A1A;
 
     --venster2-info-lijst-bg: rgb(54, 53, 53);
-
-    /* --item-lijst-bg: #ffd780;
-    --item-lijst-accenten: #e6b347;
-    --item-lijst-kleuren: #534323;
-
-    --item-lijst-titel-bg: #e6b347;
-    --item-lijst-titel-kleur: #000000; */
 
     --normale-gebied-bg: #402d16;
     --gras-gebied-bg: #3d622e;
     --ijs-gebied-bg: #2f5b7b;
+
+    /* --normale-gebied-bg: #1B1A1A;
+    --gras-gebied-bg: #1B1A1A;
+    --ijs-gebied-bg: #1B1A1A; */
 
     --tekst-kleur: white;
   }
@@ -122,18 +119,17 @@ html {
   align-items: center;
   flex-direction: column;
 
-  padding-top: 5em;
+  padding-top: 2em;
 }
 
 body {
   background-color: var(--body-bg);
   /* background-image: url("../images/achtergronden/aarde2.png"); */
 
-  margin-top: 4em;
+  /* margin-top: 4em; */
 
   font-family: var(--pokemon-font);
   font-size: 12px;
-  /* color: yellow; */
 
   /* zorgt ervoor dat tekst niet geselecteerd kan worden */
   user-select: none;
@@ -361,6 +357,11 @@ article:nth-child(1) section:nth-child(2) {
   /* overflow-y: scroll; */
 }
 
+article:nth-child(1) section:nth-child(2) p {
+  color: var(--tekst-venster-kleur);
+  font-size: 10px;
+  line-height: var(--tekst-venster-line-height);
+}
 
 /* BOXEN/GEBIEDEN */
 
@@ -551,6 +552,9 @@ article:nth-child(2)>ul li h2 {
   font-size: 12px;
 }
 
+article:nth-child(2)>ul li:last-child>p {
+  line-height: var(--info-venster-line-height);
+}
 
 
 /* ----------------------------- 
@@ -969,21 +973,4 @@ article:nth-child(1) section:nth-child(2)::-webkit-scrollbar {
   article:nth-child(1) section:nth-child(1) ul li button img {
     height: 3em;
   }
-}
-
-/* stijling voor light/dark mode */
-@media (prefers-color-scheme: light) {
-
-  body {}
-}
-
-@media (prefers-color-scheme: dark) {
-
-  /* body {
-    background-color: var(--body-bg);
-  }
-
-  header {
-    background-color: var(--venster-bg);
-  } */
 }
