@@ -46,6 +46,8 @@ Zwart
 ## Voortgang/Feedback 1
 
   In de eerste les ben ik eerst inspiratie gaan opdoen, ik ben daarom ook een moodboard gaan maken. Een moodboard met plaatjes van verschillende interfaces en informatie over de Eeevee's. Ook heb ik een video van de evolutie van Eevee gevonden, als ik tijd heb, wil ik deze ook graag maken. De 2e les ben ik mijn 3 concepten gaan laten zien aan mijn medestudenten, ik ben zelf doorgegaan met concept 1, omdat ik die zelf het leukst vond om te maken. Ik ben een wat betere schets gaan maken en heb hier feedback op gevraagd. Ik kreeg hier ook gelijk bevestiging op dat het een uniek en bijpassende interface was van Jorinda en andere klasgenoten.
+  
+  <img src="readme-images/schetsen.png" width="375px" alt="eerste versie/schets">
 
 <details>
   
