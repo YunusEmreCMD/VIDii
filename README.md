@@ -177,6 +177,7 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
   ### Je uitkomst - karakteristiek screenshot(s):
   <img src="readme-images/gehele-website.png" width="375px" alt="final ontwerp">
   
+  
   <img src="readme-images/gehele-website2.png" width="375px" alt="final ontwerp">
 
 
