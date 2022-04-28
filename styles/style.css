@@ -400,7 +400,7 @@ article:nth-child(1) section:nth-child(2) p {
   padding: 0;
   margin: 0;
 
-  font-size: 12px;
+  font-size: 10px;
   text-align: left;
   color: var(--tekst-venster-kleur);
 
@@ -556,6 +556,11 @@ article:nth-child(2)>ul li h2 {
 
 article:nth-child(2)>ul li:last-child>p {
   line-height: var(--info-venster-line-height);
+  margin-bottom: 2em;
+}
+
+article:nth-child(2)>ul li:last-child a {
+  color: blue;
 }
 
 
