@@ -175,8 +175,8 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
   * :nth-child(4n-7)
 
   ### Je uitkomst - karakteristiek screenshot(s):
-  <img src="readme-images/gehele-website" width="375px" alt="final ontwerp">
-  <img src="readme-images/gehele-website2" width="375px" alt="final ontwerp">
+  <img src="readme-images/gehele-website.png" width="375px" alt="final ontwerp">
+  <img src="readme-images/gehele-website2.png" width="375px" alt="final ontwerp">
 
 
   ### Dit ging goed/Heb ik geleerd: 
