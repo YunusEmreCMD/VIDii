@@ -64,7 +64,7 @@
   --item-lijst-focus: blue;
 
   /* uitzondering eevee knop kleuren */
-  --umbreon-knop-kleur: black;
+  --uitzondering-knop-kleur: black;
 }
 
 @media (prefers-color-scheme:light) {
@@ -170,6 +170,8 @@ img {
   user-drag: none;
   -webkit-user-drag: none
 }
+
+
 
 /* -------------------------- 
  ----------- Header --------- 
@@ -394,7 +396,7 @@ article:nth-child(1) section:nth-child(2) p {
 }
 
 
-article:nth-child(1) section:nth-child(2) button p {
+article:nth-child(1) section:nth-child(2) p {
   padding: 0;
   margin: 0;
 
@@ -414,7 +416,7 @@ article:nth-child(1) section:nth-child(2) button p {
 
 /* https://codepen.io/alvaromontoro/pen/LYLZOrE */
 
-article:nth-child(1) section:nth-child(2) button p.typewriter {
+article:nth-child(1) section:nth-child(2) p.typewriter {
   --bgColor: white;
   --lines: 500;
   --lineHeight: var(--tekst-venster-line-height);
@@ -434,7 +436,7 @@ article:nth-child(1) section:nth-child(2) button p.typewriter {
   /* word-break: break-all; */
 }
 
-article:nth-child(1) section:nth-child(2) button p.typewriter::before {
+article:nth-child(1) section:nth-child(2) p.typewriter::before {
   content: "";
   animation:
     type var(--timePerLine) linear infinite,
@@ -679,8 +681,9 @@ article:nth-child(2) section>button {
   font-size: 10px;
 }
 
-.umbreon-knop {
-  color: var(--umbreon-knop-kleur);
+.umbreon-knop,
+.glaceon-knop {
+  color: var(--uitzondering-knop-kleur);
 }
 
 
