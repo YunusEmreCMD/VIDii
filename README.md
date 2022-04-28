@@ -99,15 +99,18 @@ Zwart
 <img src="readme-images/blauwe-bg.png" width="375px" alt="eerste versie/schets">
   
   ### Bevinding 2:
-  Omschrijving van wat er nog niet orde was (tekst en afbeeding(en)).
+  Niet alle elementen waren te bereiken met tab, omdat het geen buttons waren.
 
   #### oplossing:
-  Beschrijving hoe je het hebt hebt opgelost of als het niet gelukt is hoe je het zou oplossen (tekst en afbeeding(en)).
-
+  Ik ga de elementen die echt knoppen zijn, wrappen met een button element.
 
 
   ### Bevinding 3:
-  ...
+  De informatie over de info, is goed, alleen het is niet duidelijk wat de titel is en wat precies de informatie
+  
+  #### oplossing:
+  Ik ben de titels dikgedrukt gaan maken en heb aan de onderkant meer spacing gegeven, waardoor de onderscheid duidelijker is.
+  
 
 </details>
 
