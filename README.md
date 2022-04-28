@@ -36,6 +36,7 @@ Zwart
   - Het meer en efficienter gebruiken van custom-properties
   - Elementen toevoegen/verwijderen middels Javascript
   - Ervaring en kennis opdoen over CSS Animaties
+  - Ervaring opdoen met javascript in het algemeen
  
 </details>
 
