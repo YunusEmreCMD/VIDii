@@ -185,7 +185,7 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
 
   <img src="readme-images/trots.png" width="375px" alt="top">
   
-  <code>
+  ```css
     /* ANIMTIES VOOR - EVALUATIE */
 
 /* verandert de images naar wit */
@@ -233,7 +233,7 @@ Ik had zelf niet veel kennis en ervaring met javascript, dus ik was wel benieuwd
     filter: brightness(0) invert(1);
   }
 }
-  </code>
+   ```
 
 
   ### Dit was lastig/Is niet gelukt:
