@@ -75,16 +75,14 @@ function verwijderTypewriter(){
 
 
 // Intro tekst
-// function veranderTekst(typewriterDuur) {
-//     tekstVenster.innerHTML = "Begin door op de eerste Eevee te klikken.";
-//     // tekstVenster.classList.add("kort");
-//     tekstVenster.classList.add("typewriter");
-//     tekstVenster.style.pointerEvents = "none";
+function veranderTekst(typewriterDuur) {
+    tekstVenster.classList.add("typewriter");
+    tekstVenster.style.pointerEvents = "none";
 
-//     setTimeout(verwijderTypewriter, 3000);
+    setTimeout(verwijderTypewriter, 3000);
 
-// }
-// tekstVenster.addEventListener("click", veranderTekst);
+}
+tekstVenster.addEventListener("click", veranderTekst);
 
 
 function resetEvaluatie() {
@@ -95,11 +93,10 @@ function resetEvaluatie() {
 
 // Eevee 1 tekst
 function veranderTekstEevee(typewriterDuur) {
-    // tekstVenster.classList.add("kort");
     tekstVenster.classList.add("typewriter");
-    tekstVenster.innerHTML = "Ik hoef niet te evolueren, de andere eevee's wel.";
+    tekstVenster.innerHTML = "Een tip voor straks, dubbelklik op een item en sleep de item naar de eevee in de 2e venster om deze te gebruiken.";
 
-    setTimeout(verwijderTypewriter, 4000);
+    setTimeout(verwijderTypewriter, 5500);
 
 }
 eevee1.addEventListener("click", veranderTekstEevee);
@@ -181,7 +178,7 @@ function veranderTekstEevee6(typewriterDuur) {
   if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
     tekstVenster.innerHTML = "Het is overdag, ik kan evolueren naar Espeon!";
 
-    uitzonderingEeveeKnopVullen("Evolueer naar Espeon", "espeon-knop", "purple");
+    uitzonderingEeveeKnopVullen("Evolueer naar Espeon", "espeon-knop", "#F7C7FC");
 
   }
   else {
@@ -205,7 +202,7 @@ function veranderTekstEevee7(typewriterDuur) {
   if (document.body.classList.contains("gras-gebied")) {
 
     tekstVenster.innerHTML = "Ik zit in een gras-gebied, ik ben klaar om te evolueren!";
-    uitzonderingEeveeKnopVullen("Evolueer naar Leafeon", "leafeon-knop", "green");
+    uitzonderingEeveeKnopVullen("Evolueer naar Leafeon", "leafeon-knop", "#78A068");
   }
   else {
     tekstVenster.innerHTML = "Ik moet evolueren naar Leafeon, hiervoor moet ik in een gras-gebied zijn.";
@@ -227,7 +224,7 @@ function veranderTekstEevee8(typewriterDuur) {
   if (document.body.classList.contains("ijs-gebied")) {
 
     tekstVenster.innerHTML = "Perfect! een ijsgebied, nu kan ik evolueren!";
-    uitzonderingEeveeKnopVullen("Evolueer naar Glaceon", "glaceon-knop", "blue");
+    uitzonderingEeveeKnopVullen("Evolueer naar Glaceon", "glaceon-knop", "#BAEAFF");
   }
   else {
     tekstVenster.innerHTML = "Ik moet evolueren naar Glaceon, hiervoor moet ik in een ijs-gebied zijn.";
@@ -405,19 +402,19 @@ function evolveEspeonDag() {
 
 // Knoppen weghalen
 function evolveUitzonderingEevee() {
-  if (uitzonderingEeveeKnop.classList.contains("espeonKnop")) {
+  if (uitzonderingEeveeKnop.classList.contains("espeon-knop")) {
     evolveEspeonDag();
     uitzonderingEeveeKnop.style.opacity = "0";
   }
-  if (uitzonderingEeveeKnop.classList.contains("umbreonKnop")) {
+  if (uitzonderingEeveeKnop.classList.contains("umbreon-knop")) {
     evolveUmbreonNacht();
     uitzonderingEeveeKnop.style.opacity = "0";
   }
-  if (uitzonderingEeveeKnop.classList.contains("leafeonKnop")) {
+  if (uitzonderingEeveeKnop.classList.contains("leafeon-knop")) {
     evolveLeafeonGras();
     uitzonderingEeveeKnop.style.opacity = "0";
   }
-  if (uitzonderingEeveeKnop.classList.contains("glaceonKnop")) {
+  if (uitzonderingEeveeKnop.classList.contains("glaceon-knop")) {
     evolveGlaceonIjs();
     uitzonderingEeveeKnop.style.opacity = "0";
   }
