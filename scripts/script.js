@@ -449,6 +449,7 @@ function evolveGlaceonIjs() {
 // ---------------------------- //
 
 // https://sortablejs.github.io/Sortable/
+// https://codepen.io/shooft/pen/MWrBOao?editors=0010
 
 // Er wordt niet gesleept
 var slepen = false;
